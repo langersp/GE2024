@@ -2,12 +2,21 @@
 
 import Image from "next/image";
 import rawData from "./data/GE2024-v3.json";
+import { useState, useEffect } from "react";
 
-function sumVotes(party) {
-  return party.reduce((accumulator, currentValue) => {
-    currentValue = parseInt(currentValue);
+function sumVotes(partyData, lookup, convertInt) {
+  return partyData.reduce((accumulator, currentValue) => {
+    if (convertInt) {
+      currentValue = parseInt(currentValue);
+    }
 
-    if (currentValue) {
+    if (lookup) {
+      if (currentValue === lookup) {
+        console.log(accumulator, "acc");
+        accumulator++;
+      }
+      return accumulator;
+    } else if (currentValue) {
       return accumulator + currentValue;
     } else {
       return accumulator;
@@ -16,100 +25,164 @@ function sumVotes(party) {
 }
 
 export default function Page() {
-  console.log(rawData, 'rawData')
-  const conservativeVotes2019 = sumVotes(rawData[19][""]);
-  const labourVotes2019 = sumVotes(rawData[20][""]);
-  const liberalVotes2019 = sumVotes(rawData[21][""]);
-  const reformVotes2019 = sumVotes(rawData[22][""]);
-  const greenVotes2019 = sumVotes(rawData[23][""]);
-  const snpVotes2019 = sumVotes(rawData[24][""]);
-  const pcVotes2019 = sumVotes(rawData[25][""]);
-  const otherVotes2019 = sumVotes(rawData[26][""]);
+  console.log(rawData, "rawData");
+  //const conservativeVotesNowCast = sumVotes(rawData[19][""], "", true);
+  //const labourVotes2019 = sumVotes(rawData[20][""], "", true);
+  const liberalVotes2019 = sumVotes(rawData[21][""], "", true);
+  const reformVotes2019 = sumVotes(rawData[22][""], "", true);
+  const greenVotes2019 = sumVotes(rawData[23][""], "", true);
+  const snpVotes2019 = sumVotes(rawData[24][""], "", true);
+  const pcVotes2019 = sumVotes(rawData[25][""], "", true);
+  const otherVotes2019 = sumVotes(rawData[26][""], "", true);
 
-  
+  const [conservativeData, setConservativeData] = useState({
+    2019: 0,
+    nowCast: 0,
+  });
 
- const conservatives = rawData[9]["Winner"].reduce((acc,curr) => {
-  if(curr === "Con")
-     acc++;
-  return acc;
-},0);
+  const [labourData, setLabourData] = useState({
+    2019: 0,
+    nowCast: 0,
+  });
 
-console.log(conservatives)
+  const [liberalData, setLiberalData] = useState({
+    2019: 0,
+    nowCast: 0,
+  });
+
+  const [greenData, setGreenData] = useState({
+    2019: 0,
+    nowCast: 0,
+  });
+
+  const [reformData, setReformData] = useState({
+    2019: 0,
+    nowCast: 0,
+  });
+
+  const [snpData, setSnpData] = useState({
+    2019: 0,
+    nowCast: 0,
+  });
+
+  const [otherData, setOtherData] = useState({
+    2019: 0,
+    nowCast: 0,
+  });
+
+  const [pcData, setPcData] = useState({
+    2019: 0,
+    nowCast: 0,
+  });
+
+  useEffect(() => {
+    setConservativeData({
+      2019: sumVotes(rawData[9]["Winner"], "Con", false),
+      nowCast: sumVotes(rawData[19][""], "", true),
+    });
+    setLabourData({
+      2019: sumVotes(rawData[9]["Winner"], "Lab", false),
+      nowCast: sumVotes(rawData[20][""], "", true),
+    });
+    setLiberalData({
+      2019: sumVotes(rawData[9]["Winner"], "LD", false),
+      nowCast: sumVotes(rawData[21][""], "", true),
+    });
+    setReformData({
+      2019: sumVotes(rawData[9]["Winner"], "Ref", false),
+      nowCast: sumVotes(rawData[22][""], "", true),
+    });
+    setGreenData({
+      2019: sumVotes(rawData[9]["Winner"], "Green", false),
+      nowCast: sumVotes(rawData[23][""], "", true),
+    });
+    setSnpData({
+      2019: sumVotes(rawData[9]["Winner"], "SNP", false),
+      nowCast: sumVotes(rawData[24][""], "", true),
+    });
+    setPcData({
+      2019: sumVotes(rawData[9]["Winner"], "PC", false),
+      nowCast: sumVotes(rawData[25][""], "", true),
+    });
+    setOtherData({
+      2019: sumVotes(rawData[9]["Winner"], "Other", false),
+      nowCast: sumVotes(rawData[26][""], "", true),
+    });
+  }, []);
+  //setConservativeData({ nowCast: conservativeVotesNowCast });
+
+  //const conservativeVotes20191 = sumVotes(rawData[9]["Winner"], "Con", true);
+
+  // const conservatives = rawData[9]["Winner"].reduce((acc, curr) => {
+  //   if (curr === "Con") acc++;
+  //   return acc;
+  // }, 0);
+
+  // console.log(conservatives);
   return (
     <>
       <h1>GE2024</h1>
 
-      <table style={{ backgroundColor: "#eee", cellPadding: "20px" }}>
+      <table>
         <thead>
           <tr>
             <th>Number of Seats in Great Britain</th>
             <th>2019 National Results</th>
             <th>Nowcast (Current Polling Avg)</th>
-            <th>If Polls Tighten (Historic Avg)</th>
-            <th>Plus Anti-Tory Tactical Voting</th>
             <th>Plus Reform UK Stand Aside</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>Conservative</td>
-            <td>{conservativeVotes2019}</td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>{conservativeData["2019"]}</td>
+            <td>{conservativeData["nowCast"]}</td>
             <td></td>
           </tr>
           <tr>
             <td>Labour</td>
-            <td>{labourVotes2019}</td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>{labourData["2019"]}</td>
+            <td>{labourData["nowCast"]}</td>
             <td></td>
           </tr>
           <tr>
             <td>Liberal Democrats</td>
-            <td>{liberalVotes2019}</td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>{liberalData["2019"]}</td>
+            <td>{liberalData["nowCast"]}</td>
             <td></td>
           </tr>
           <tr>
             <td>Reform UK</td>
-            <td>{reformVotes2019}</td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>{reformData["2019"]}</td>
+            <td>{reformData["nowCast"]}</td>
             <td></td>
           </tr>
           <tr>
             <td>Green</td>
-            <td>{greenVotes2019}</td>
-            <td></td>
-            <td></td>
+            <td>{greenData["2019"]}</td>
+            <td>{greenData["nowCast"]}</td>
             <td></td>
           </tr>
           <tr>
             <td>SNP</td>
-            <td>{snpVotes2019}</td>
-            <td></td>
+            <td>{snpData["2019"]}</td>
+            <td>{snpData["nowCast"]}</td>
             <td></td>
             <td></td>
             <td></td>
           </tr>
           <tr>
             <td>Plaid Cymru</td>
-            <td>{pcVotes2019}</td>
-            <td></td>
+            <td>{pcData["2019"]}</td>
+            <td>{pcData["nowCast"]}</td>
             <td></td>
             <td></td>
             <td></td>
           </tr>
           <tr>
             <td>Other</td>
-            <td>{otherVotes2019}</td>
-            <td></td>
+            <td>{otherData["2019"]}</td>
+            <td>{otherData["nowCast"]}</td>
             <td></td>
             <td></td>
             <td></td>
