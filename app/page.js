@@ -12,7 +12,6 @@ function sumVotes(partyData, lookup, convertInt) {
 
     if (lookup) {
       if (currentValue === lookup) {
-        console.log(accumulator, "acc");
         accumulator++;
       }
       return accumulator;
@@ -168,23 +167,17 @@ export default function Page() {
             <td>{snpData["2019"]}</td>
             <td>{snpData["nowCast"]}</td>
             <td></td>
-            <td></td>
-            <td></td>
           </tr>
           <tr>
             <td>Plaid Cymru</td>
             <td>{pcData["2019"]}</td>
             <td>{pcData["nowCast"]}</td>
             <td></td>
-            <td></td>
-            <td></td>
           </tr>
           <tr>
             <td>Other</td>
             <td>{otherData["2019"]}</td>
             <td>{otherData["nowCast"]}</td>
-            <td></td>
-            <td></td>
             <td></td>
           </tr>
         </tbody>
