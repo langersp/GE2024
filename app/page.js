@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import rawData from "./data/GE2024-v3.json";
+import rawData from "./data/ge2024-v4.json";
 import { useState, useEffect } from "react";
 
 function sumVotes(partyData, lookup, convertInt) {
@@ -27,26 +27,26 @@ export default function Page() {
   console.log(rawData, "rawData");
 
   const [conservativeData, setConservativeData] = useState({
-    2019: 0,
-    nowCast: 0,
+    2019: 372,
+    nowCast: 184,
     reform: 0,
   });
 
   const [labourData, setLabourData] = useState({
-    2019: 0,
-    nowCast: 0,
+    2019: 199,
+    nowCast: 386,
     reform: 0,
   });
 
   const [liberalData, setLiberalData] = useState({
-    2019: 0,
-    nowCast: 0,
+    2019: 9,
+    nowCast: 30,
     reform: 0,
   });
 
   const [greenData, setGreenData] = useState({
-    2019: 0,
-    nowCast: 0,
+    2019: 1,
+    nowCast: 1,
     reform: 0,
   });
 
@@ -57,64 +57,56 @@ export default function Page() {
   });
 
   const [snpData, setSnpData] = useState({
-    2019: 0,
-    nowCast: 0,
-    reform: 0,
-  });
-
-  const [otherData, setOtherData] = useState({
-    2019: 0,
-    nowCast: 0,
+    2019: 48,
+    nowCast: 26,
     reform: 0,
   });
 
   const [pcData, setPcData] = useState({
-    2019: 0,
-    nowCast: 0,
+    2019: 2,
+    nowCast: 3,
+    reform: 0,
+  });
+
+  const [otherData, setOtherData] = useState({
+    2019: 1,
+    nowCast: 2,
     reform: 0,
   });
 
   useEffect(() => {
-    setConservativeData({
-      2019: sumVotes(rawData[9]["Winner"], "Con", false),
-      nowCast: sumVotes(rawData[19][""], "", true),
-      reform: sumVotes(rawData[75][""], "", true),
-    });
-    setLabourData({
-      2019: sumVotes(rawData[9]["Winner"], "Lab", false),
-      nowCast: sumVotes(rawData[20][""], "", true),
-      reform: sumVotes(rawData[76][""], "", true),
-    });
-    setLiberalData({
-      2019: sumVotes(rawData[9]["Winner"], "LD", false),
-      nowCast: sumVotes(rawData[21][""], "", true),
-      reform: sumVotes(rawData[77][""], "", true),
-    });
-    setReformData({
-      2019: sumVotes(rawData[9]["Winner"], "Ref", false),
-      nowCast: sumVotes(rawData[22][""], "", true),
-      reform: sumVotes(rawData[78][""], "", true),
-    });
-    setGreenData({
-      2019: sumVotes(rawData[9]["Winner"], "Green", false),
-      nowCast: sumVotes(rawData[23][""], "", true),
-      reform: sumVotes(rawData[79][""], "", true),
-    });
-    setSnpData({
-      2019: sumVotes(rawData[9]["Winner"], "SNP", false),
-      nowCast: sumVotes(rawData[24][""], "", true),
-      reform: sumVotes(rawData[80][""], "", true),
-    });
-    setPcData({
-      2019: sumVotes(rawData[9]["Winner"], "PC", false),
-      nowCast: sumVotes(rawData[25][""], "", true),
-      reform: sumVotes(rawData[81][""], "", true),
-    });
-    setOtherData({
-      2019: sumVotes(rawData[9]["Winner"], "Other", false),
-      nowCast: sumVotes(rawData[26][""], "", true),
-      reform: sumVotes(rawData[82]["Oth"], "", true),
-    });
+    setConservativeData((values) => ({
+      ...values,
+      reform: sumVotes(rawData[51]["Con"], "", true),
+    }));
+    setLabourData((values) => ({
+      ...values,
+      reform: sumVotes(rawData[52]["Lab"], "", true),
+    }));
+    setLiberalData((values) => ({
+      ...values,
+      reform: sumVotes(rawData[53]["Lib"], "", true),
+    }));
+    setReformData((values) => ({
+      ...values,
+      reform: sumVotes(rawData[54]["BRX"], "", true),
+    }));
+    setGreenData((values) => ({
+      ...values,
+      reform: sumVotes(rawData[55]["GRN"], "", true),
+    }));
+    setSnpData((values) => ({
+      ...values,
+      reform: sumVotes(rawData[56]["SNP"], "", true),
+    }));
+    setPcData((values) => ({
+      ...values,
+      reform: sumVotes(rawData[57]["PC"], "", true),
+    }));
+    setOtherData((values) => ({
+      ...values,
+      reform: sumVotes(rawData[58]["other"], "", true),
+    }));
   }, []);
   //setConservativeData({ nowCast: conservativeVotesNowCast });
 
@@ -135,8 +127,8 @@ export default function Page() {
           <tr>
             <th>Number of Seats in Great Britain</th>
             <th>2019 National Results</th>
-            <th>Nowcast (Current Polling Avg)</th>
-            <th>Plus Reform UK Stand Aside</th>
+            <th>Nowcast (Current Polling Averages)</th>
+            <th>Potential 2024 Result</th>
           </tr>
         </thead>
         <tbody>
