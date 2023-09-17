@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import rawData from "./data/ge2024-v4.json";
+import rawData from "./data/ge2024-v5.json";
 import { useState, useEffect } from "react";
 
 function sumVotes(partyData, lookup, convertInt) {
@@ -25,6 +25,8 @@ function sumVotes(partyData, lookup, convertInt) {
 
 export default function Page() {
   console.log(rawData, "rawData");
+
+  //let parsedRawData = JSON.parse(rawData)
 
   const [conservativeData, setConservativeData] = useState({
     2019: 372,
@@ -73,6 +75,78 @@ export default function Page() {
     nowCast: 2,
     reform: 0,
   });
+
+  const onHandlePollsTighten = (percentage, antiToryPercentage = 0) => {
+    let AZSum = 0;
+
+    for (let i = 0; i <= 631; i++) {
+      const AP2 = 0;
+      let AH2 = parseFloat(rawData[1]["Con"][i]) + percentage / 100;
+      const AR2 = AH2 + AP2;
+      const AQ2 = 0;
+
+      const E2 = rawData[2]["Lab"][i] - percentage / 100;
+      let F2 = rawData[5]["Lib"][i];
+      let H2 = rawData[7]["GRN"][i];
+      let I2 = rawData[8]["SNP"][i];
+      let J2 = rawData[9]["PC"][i];
+
+      F2 = F2 !== "" ? parseFloat(F2) : 0;
+      H2 = H2 !== "" ? parseFloat(H2) : 0;
+      I2 = I2 !== "" ? parseFloat(I2) : 0;
+      J2 = J2 !== "" ? parseFloat(J2) : 0;
+
+      const range1 = Math.max(E2, F2);
+      const range2 = Math.max(H2, I2, J2);
+      const V2 = E2 + F2 + H2 + I2 + J2;
+      const U2 = Math.max(range1, range2);
+
+      const W2 = V2 - U2;
+
+      const X2 = W2 * antiToryPercentage;
+
+      let Y2 = U2 + X2;
+      Y2 = parseFloat(Y2);
+
+      const AI2 = E2 === U2 ? Y2 : E2;
+      let AS2 = AI2 + AQ2;
+
+      let AT2 = F2 === U2 ? Y2 : F2;
+      let AU2 = 0;
+      let AV2 = H2 === U2 ? Y2 : H2;
+
+      let AW2 = I2 === U2 ? Y2 : I2;
+
+      let AX2 = J2 === U2 ? Y2 : J2;
+      let AY2 = 0;
+
+      // AS2 = parseFloat(AS2);
+      // AT2 = parseFloat(AT2);
+      // AU2 = parseFloat(AU2);
+      // AV2 = parseFloat(AV2);
+      // AW2 = parseFloat(AW2);
+      // AX2 = parseFloat(AX2);
+      // AY2 = parseFloat(AY2);
+
+      const range3 = Math.max(AR2, AS2, AT2, AU2, AV2, AW2, AX2, AY2);
+
+      let AZ2 = AR2 === range3 ? 1 : 0;
+
+      //console.log(AR2, 'Ar2', AS2, 'AS2', AT2, 'AT2', AU2, 'au2', AV2, 'AV2', AW2, 'AW2', AX2, 'AX2', AY2, 'AY2')
+      if (AZ2 === 1) {
+        console.log(AZ2, "AZ2", i, "i");
+      }
+
+      AZSum += AZ2;
+    }
+
+    AZSum -= 1;
+    
+    setConservativeData((values) => ({
+      ...values,
+      reform: AZSum,
+    }));
+  };
 
   useEffect(() => {
     setConservativeData((values) => ({
@@ -182,6 +256,10 @@ export default function Page() {
           </tr>
         </tbody>
       </table>
+
+      <button onClick={() => onHandlePollsTighten(77, 0)} value="TEST">
+        TEST
+      </button>
     </>
   );
 }
