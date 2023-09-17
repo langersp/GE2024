@@ -77,7 +77,7 @@ export default function Page() {
   });
 
   const onHandlePollsTighten = (percentage, antiToryPercentage = 0) => {
-    let AZSum = 0;
+    let conservativeSum = 0, labourSum = 0, liberalSum = 0, reformSum = 0;
 
     for (let i = 0; i <= 631; i++) {
       const AP2 = 0;
@@ -131,20 +131,37 @@ export default function Page() {
       const range3 = Math.max(AR2, AS2, AT2, AU2, AV2, AW2, AX2, AY2);
 
       let AZ2 = AR2 === range3 ? 1 : 0;
-
+      let BA2 = AS2 === range3 ? 1 : 0;
+      let BB2 = AT2 === range3 ? 1 : 0;
+      let BC2 = AU2 === range3 ? 1 : 0;
       //console.log(AR2, 'Ar2', AS2, 'AS2', AT2, 'AT2', AU2, 'au2', AV2, 'AV2', AW2, 'AW2', AX2, 'AX2', AY2, 'AY2')
       if (AZ2 === 1) {
         console.log(AZ2, "AZ2", i, "i");
       }
 
-      AZSum += AZ2;
+      conservativeSum += AZ2;
+      labourSum += BA2;
+      liberalSum += BB2;
+      reformSum += BC2;
     }
 
-    AZSum -= 1;
+    conservativeSum -= 1;
     
     setConservativeData((values) => ({
       ...values,
-      reform: AZSum,
+      reform: conservativeSum,
+    }));
+    setLabourData((values) => ({
+      ...values,
+      reform: labourSum,
+    }));
+    setLiberalData((values) => ({
+      ...values,
+      reform: liberalSum,
+    }));
+    setReformData((values) => ({
+      ...values,
+      reform: reformSum,
     }));
   };
 
@@ -257,7 +274,7 @@ export default function Page() {
         </tbody>
       </table>
 
-      <button onClick={() => onHandlePollsTighten(77, 0)} value="TEST">
+      <button onClick={() => onHandlePollsTighten(16, 0)} value="TEST">
         TEST
       </button>
     </>
