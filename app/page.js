@@ -3,6 +3,9 @@
 import Image from "next/image";
 import rawData from "./data/ge2024-v5.json";
 import { useState, useEffect } from "react";
+import Slider from "@mui/material/Slider";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
 
 function sumVotes(partyData, lookup, convertInt) {
   return partyData.reduce((accumulator, currentValue) => {
@@ -27,6 +30,8 @@ export default function Page() {
   console.log(rawData, "rawData");
 
   //let parsedRawData = JSON.parse(rawData)
+
+  const [pollSliderPercentage, setPollSliderPercentage] = useState(0);
 
   const [conservativeData, setConservativeData] = useState({
     2019: 372,
@@ -76,8 +81,21 @@ export default function Page() {
     reform: 0,
   });
 
+  const handlePollSliderChange = (event, newValue) => {
+    setPollSliderPercentage(newValue);
+    console.log(pollSliderPercentage)
+    onHandlePollsTighten(pollSliderPercentage, 0)
+  };
+
   const onHandlePollsTighten = (percentage, antiToryPercentage = 0) => {
-    let conservativeSum = 0, labourSum = 0, liberalSum = 0, reformSum = 0;
+    let conservativeSum = 0,
+      labourSum = 0,
+      liberalSum = 0,
+      reformSum = 0,
+      greenSum = 0,
+      snpSum = 0,
+      pcSum = 0,
+      otherSum = 0;
 
     for (let i = 0; i <= 631; i++) {
       const AP2 = 0;
@@ -118,8 +136,9 @@ export default function Page() {
       let AW2 = I2 === U2 ? Y2 : I2;
 
       let AX2 = J2 === U2 ? Y2 : J2;
-      let AY2 = 0;
-
+      //let AY2 = 0;
+      let AY2 = rawData[10]["other"][i];
+      //console.log(AY2, 'AY2')
       // AS2 = parseFloat(AS2);
       // AT2 = parseFloat(AT2);
       // AU2 = parseFloat(AU2);
@@ -134,19 +153,32 @@ export default function Page() {
       let BA2 = AS2 === range3 ? 1 : 0;
       let BB2 = AT2 === range3 ? 1 : 0;
       let BC2 = AU2 === range3 ? 1 : 0;
+      let BD2 = AV2 === range3 ? 1 : 0;
+      let BE2 = AW2 === range3 ? 1 : 0;
+      let BF2 = AX2 === range3 ? 1 : 0;
+      let BG2 = AY2 === range3 ? 1 : 0;
+
       //console.log(AR2, 'Ar2', AS2, 'AS2', AT2, 'AT2', AU2, 'au2', AV2, 'AV2', AW2, 'AW2', AX2, 'AX2', AY2, 'AY2')
       if (AZ2 === 1) {
-        console.log(AZ2, "AZ2", i, "i");
+        //console.log(AZ2, "AZ2", i, "i");
+      }
+      if (BG2 === 1) {
+        console.log(BG2, "BG2", i, "i");
       }
 
       conservativeSum += AZ2;
       labourSum += BA2;
       liberalSum += BB2;
       reformSum += BC2;
+      greenSum += BD2;
+      snpSum += BE2;
+      pcSum += BF2;
+      otherSum += BG2;
     }
 
-    conservativeSum -= 1;
-    
+    //weird bug
+    if(pollSliderPercentage > 7 && pollSliderPercentage < 64) {conservativeSum -= 1;}
+
     setConservativeData((values) => ({
       ...values,
       reform: conservativeSum,
@@ -162,6 +194,22 @@ export default function Page() {
     setReformData((values) => ({
       ...values,
       reform: reformSum,
+    }));
+    setGreenData((values) => ({
+      ...values,
+      reform: greenSum,
+    }));
+    setSnpData((values) => ({
+      ...values,
+      reform: snpSum,
+    }));
+    setPcData((values) => ({
+      ...values,
+      reform: pcSum,
+    }));
+    setOtherData((values) => ({
+      ...values,
+      reform: otherSum,
     }));
   };
 
@@ -274,9 +322,20 @@ export default function Page() {
         </tbody>
       </table>
 
-      <button onClick={() => onHandlePollsTighten(16, 0)} value="TEST">
-        TEST
-      </button>
+      <Box sx={{ width: 300 }} style={{margin:'20px'}}>
+        <Slider
+          defaultValue={0}
+          aria-label="Poll Slider"
+          valueLabelDisplay="auto"
+          onChange={handlePollSliderChange}
+        />
+      </Box>
+
+      <Button style={{margin:'20px'}} onClick={() => onHandlePollsTighten(pollSliderPercentage, 0)} variant="outlined">Test Poll Tighten</Button>
+
+      {/* <button onClick={() => onHandlePollsTighten(pollSliderPercentage, 0)} value="TEST POLL">
+        TEST POLL
+      </button> */}
     </>
   );
 }
