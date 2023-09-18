@@ -36,6 +36,7 @@ export default function Page() {
   //let parsedRawData = JSON.parse(rawData)
 
   const [pollSliderPercentage, setPollSliderPercentage] = useState(0);
+  const [antiTorySliderPercentage, setAntiTorySliderPercentage] = useState(0);
   const [reformToggle, setReformToggle] = useState(false);
 
   const [conservativeData, setConservativeData] = useState({
@@ -91,6 +92,10 @@ export default function Page() {
     //onHandlePollsTighten()
   };
 
+  const handleAntiTorySliderChange = (event, newValue) => {
+    setAntiTorySliderPercentage(newValue);
+  };
+
   const handleReformToggle = (event) => {
     setReformToggle(prevState => (!prevState))
     // prevState => ({
@@ -99,8 +104,8 @@ export default function Page() {
     //onHandlePollsTighten()
   }
   console.log(reformToggle, 'toggle')
-
-  const onHandlePollsTighten = (antiToryPercentage = 0) => {
+console.log(antiTorySliderPercentage, 'anti')
+  const onHandlePollsTighten = () => {
     let conservativeSum = 0,
       labourSum = 0,
       liberalSum = 0,
@@ -145,7 +150,8 @@ export default function Page() {
 
       const W2 = V2 - U2;
 
-      const X2 = W2 * antiToryPercentage;
+      const X2 = W2 * antiTorySliderPercentage / 100;
+      console.log(X2, 'X2')
 
       let Y2 = U2 + X2;
       Y2 = parseFloat(Y2);
@@ -374,6 +380,15 @@ export default function Page() {
           aria-label="Poll Slider"
           valueLabelDisplay="auto"
           onChange={handlePollSliderChange}
+        />
+      </Box>
+
+      <Box sx={{ width: 300 }} style={{margin:'20px'}}>
+        <Slider
+          defaultValue={0}
+          aria-label="Anti-Tory Tactical Voting"
+          valueLabelDisplay="auto"
+          onChange={handleAntiTorySliderChange}
         />
       </Box>
 
