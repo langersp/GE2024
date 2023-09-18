@@ -83,7 +83,7 @@ export default function Page() {
 
   const handlePollSliderChange = (event, newValue) => {
     setPollSliderPercentage(newValue);
-    console.log(pollSliderPercentage)
+    //console.log(pollSliderPercentage)
     onHandlePollsTighten(pollSliderPercentage, 0)
   };
 
@@ -138,7 +138,8 @@ export default function Page() {
       let AX2 = J2 === U2 ? Y2 : J2;
       //let AY2 = 0;
       let AY2 = rawData[10]["other"][i];
-      //console.log(AY2, 'AY2')
+      AY2 = parseFloat(AY2);
+      console.log(AY2, 'AY2')
       // AS2 = parseFloat(AS2);
       // AT2 = parseFloat(AT2);
       // AU2 = parseFloat(AU2);
@@ -148,6 +149,8 @@ export default function Page() {
       // AY2 = parseFloat(AY2);
 
       const range3 = Math.max(AR2, AS2, AT2, AU2, AV2, AW2, AX2, AY2);
+
+      console.log(range3, 'range3', AY2, 'AY2')
 
       let AZ2 = AR2 === range3 ? 1 : 0;
       let BA2 = AS2 === range3 ? 1 : 0;
@@ -163,7 +166,7 @@ export default function Page() {
         //console.log(AZ2, "AZ2", i, "i");
       }
       if (BG2 === 1) {
-        console.log(BG2, "BG2", i, "i");
+        //console.log(BG2, "BG2", i, "i");
       }
 
       conservativeSum += AZ2;
