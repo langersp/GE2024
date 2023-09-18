@@ -377,7 +377,6 @@ export default function Page() {
         />
       </Box>
 
-      <Button style={{margin:'20px'}} onClick={() => onHandlePollsTighten()} variant="outlined">Test Poll Tighten</Button>
 
       <Stack direction="row" spacing={1} alignItems="center">
         <Typography>No</Typography>
@@ -385,6 +384,9 @@ export default function Page() {
         <Typography>Yes</Typography>
       </Stack>
       <p>Reform UK stand aside</p>
+
+      <Button style={{margin:'20px'}} onClick={() => onHandlePollsTighten()} variant="outlined">Submit</Button>
+
       {/* <button onClick={() => onHandlePollsTighten(pollSliderPercentage, 0)} value="TEST POLL">
         TEST POLL
       </button> */}
