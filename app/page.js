@@ -223,7 +223,7 @@ export default function Page() {
     }
 
     //weird bug
-    if(pollSliderPercentage > 7 && pollSliderPercentage < 64) {conservativeSum -= 1;}
+    //if(pollSliderPercentage > 7 && pollSliderPercentage < 64) {conservativeSum -= 1;}
 
     setConservativeData((values) => ({
       ...values,
