@@ -6,6 +6,10 @@ import { useState, useEffect } from "react";
 import Slider from "@mui/material/Slider";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
+import Switch, { SwitchProps } from '@mui/material/Switch';
+import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
+
 
 function sumVotes(partyData, lookup, convertInt) {
   return partyData.reduce((accumulator, currentValue) => {
@@ -32,6 +36,7 @@ export default function Page() {
   //let parsedRawData = JSON.parse(rawData)
 
   const [pollSliderPercentage, setPollSliderPercentage] = useState(0);
+  const [reformToggle, setReformToggle] = useState(false);
 
   const [conservativeData, setConservativeData] = useState({
     2019: 372,
@@ -83,11 +88,19 @@ export default function Page() {
 
   const handlePollSliderChange = (event, newValue) => {
     setPollSliderPercentage(newValue);
-    //console.log(pollSliderPercentage)
-    onHandlePollsTighten(pollSliderPercentage, 0)
+    //onHandlePollsTighten()
   };
 
-  const onHandlePollsTighten = (percentage, antiToryPercentage = 0) => {
+  const handleReformToggle = (event) => {
+    setReformToggle(prevState => (!prevState))
+    // prevState => ({
+    //   check: !prevState.check
+    // }))
+    //onHandlePollsTighten()
+  }
+  console.log(reformToggle, 'toggle')
+
+  const onHandlePollsTighten = (antiToryPercentage = 0) => {
     let conservativeSum = 0,
       labourSum = 0,
       liberalSum = 0,
@@ -97,19 +110,22 @@ export default function Page() {
       pcSum = 0,
       otherSum = 0;
 
-    for (let i = 0; i <= 631; i++) {
-      const AP2 = 0;
-      let AH2 = parseFloat(rawData[1]["Con"][i]) + percentage / 100;
-      const AR2 = AH2 + AP2;
-      const AQ2 = 0;
+     // console.log(reformToggle, 'Reform Toggle 2')
 
-      const E2 = rawData[2]["Lab"][i] - percentage / 100;
+
+    for (let i = 0; i <= 631; i++) {
+      
+      let AP2 = 0, AQ2 = 0;
+
+      const E2 = rawData[2]["Lab"][i] - pollSliderPercentage / 100;
       let F2 = rawData[5]["Lib"][i];
+      let G2 = rawData[6]["BRX"][i];
       let H2 = rawData[7]["GRN"][i];
       let I2 = rawData[8]["SNP"][i];
       let J2 = rawData[9]["PC"][i];
 
       F2 = F2 !== "" ? parseFloat(F2) : 0;
+      G2 = G2 !== "" ? parseFloat(G2) : 0;
       H2 = H2 !== "" ? parseFloat(H2) : 0;
       I2 = I2 !== "" ? parseFloat(I2) : 0;
       J2 = J2 !== "" ? parseFloat(J2) : 0;
@@ -118,6 +134,14 @@ export default function Page() {
       const range2 = Math.max(H2, I2, J2);
       const V2 = E2 + F2 + H2 + I2 + J2;
       const U2 = Math.max(range1, range2);
+      
+
+
+      
+
+      let AH2 = parseFloat(rawData[1]["Con"][i]) + pollSliderPercentage / 100;
+      //console.log(AH2, 'AH2')
+      
 
       const W2 = V2 - U2;
 
@@ -127,7 +151,17 @@ export default function Page() {
       Y2 = parseFloat(Y2);
 
       const AI2 = E2 === U2 ? Y2 : E2;
+      const AK2 = G2 === U2 ? Y2 : G2;
+
+      if(reformToggle) {
+        AP2 = AK2*0.7;
+        AQ2 = AK2*0.3;   
+      }
+      const AR2 = AH2 + AP2;
+      //console.log(AP2, 'AP2', AK2, 'AK2', G2, 'G2', AR2, 'AR2')
+
       let AS2 = AI2 + AQ2;
+      
 
       let AT2 = F2 === U2 ? Y2 : F2;
       let AU2 = 0;
@@ -139,7 +173,7 @@ export default function Page() {
       //let AY2 = 0;
       let AY2 = rawData[10]["other"][i];
       AY2 = parseFloat(AY2);
-      console.log(AY2, 'AY2')
+      //console.log(AY2, 'AY2')
       // AS2 = parseFloat(AS2);
       // AT2 = parseFloat(AT2);
       // AU2 = parseFloat(AU2);
@@ -150,9 +184,18 @@ export default function Page() {
 
       const range3 = Math.max(AR2, AS2, AT2, AU2, AV2, AW2, AX2, AY2);
 
-      console.log(range3, 'range3', AY2, 'AY2')
+      //console.log(range3, 'range3', AY2, 'AY2')
 
       let AZ2 = AR2 === range3 ? 1 : 0;
+      // if(AZ2 === 1 && i === 173) { 
+      //   console.log(AZ2, 'AZ2', i); 
+      //   console.log(AP2, 'AP2', AK2, 'AK2', G2, 'G2', AR2, 'AR2');
+      //   console.log(range3, 'range3')
+
+      //   console.log(AR2, 'AR2', AS2, 'AS2', AT2, 'AT2', AU2, 'AU2', AV2, 'AV2', AW2, 'AW2', AX2, 'AX2', AY2, 'AY2')
+      //   console.log('AS2', AS2, AI2, AQ2)
+      // }
+
       let BA2 = AS2 === range3 ? 1 : 0;
       let BB2 = AT2 === range3 ? 1 : 0;
       let BC2 = AU2 === range3 ? 1 : 0;
@@ -334,8 +377,14 @@ export default function Page() {
         />
       </Box>
 
-      <Button style={{margin:'20px'}} onClick={() => onHandlePollsTighten(pollSliderPercentage, 0)} variant="outlined">Test Poll Tighten</Button>
+      <Button style={{margin:'20px'}} onClick={() => onHandlePollsTighten()} variant="outlined">Test Poll Tighten</Button>
 
+      <Stack direction="row" spacing={1} alignItems="center">
+        <Typography>No</Typography>
+        <Switch onChange={handleReformToggle} checked={reformToggle} />
+        <Typography>Yes</Typography>
+      </Stack>
+      <p>Reform UK stand aside</p>
       {/* <button onClick={() => onHandlePollsTighten(pollSliderPercentage, 0)} value="TEST POLL">
         TEST POLL
       </button> */}
