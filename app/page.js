@@ -31,11 +31,8 @@ function sumVotes(partyData, lookup, convertInt) {
 }
 
 export default function Page() {
-  console.log(rawData, "rawData");
 
-  //let parsedRawData = JSON.parse(rawData)
-
-  const [pollSliderPercentage, setPollSliderPercentage] = useState(0);
+  const [pollSliderPercentage, setPollSliderPercentage] = useState(4);
   const [antiTorySliderPercentage, setAntiTorySliderPercentage] = useState(0);
   const [reformToggle, setReformToggle] = useState(false);
 
@@ -89,7 +86,6 @@ export default function Page() {
 
   const handlePollSliderChange = (event, newValue) => {
     setPollSliderPercentage(newValue);
-    //onHandlePollsTighten()
   };
 
   const handleAntiTorySliderChange = (event, newValue) => {
@@ -97,15 +93,12 @@ export default function Page() {
   };
 
   const handleReformToggle = (event) => {
-    setReformToggle(prevState => (!prevState))
-    // prevState => ({
-    //   check: !prevState.check
-    // }))
-    //onHandlePollsTighten()
+    setReformToggle(event.target.checked)
+    onHandlePollsTighten(event.target.checked, pollSliderPercentage, antiTorySliderPercentage)
   }
-  console.log(reformToggle, 'toggle')
-console.log(antiTorySliderPercentage, 'anti')
-  const onHandlePollsTighten = () => {
+  
+  const onHandlePollsTighten = (reformToggle, pollSliderPercentage, antiTorySliderPercentage) => {
+    
     let conservativeSum = 0,
       labourSum = 0,
       liberalSum = 0,
@@ -114,9 +107,6 @@ console.log(antiTorySliderPercentage, 'anti')
       snpSum = 0,
       pcSum = 0,
       otherSum = 0;
-
-     // console.log(reformToggle, 'Reform Toggle 2')
-
 
     for (let i = 0; i <= 631; i++) {
       
@@ -139,19 +129,12 @@ console.log(antiTorySliderPercentage, 'anti')
       const range2 = Math.max(H2, I2, J2);
       const V2 = E2 + F2 + H2 + I2 + J2;
       const U2 = Math.max(range1, range2);
-      
-
-
-      
 
       let AH2 = parseFloat(rawData[1]["Con"][i]) + pollSliderPercentage / 100;
-      //console.log(AH2, 'AH2')
       
-
       const W2 = V2 - U2;
 
       const X2 = W2 * antiTorySliderPercentage / 100;
-      console.log(X2, 'X2')
 
       let Y2 = U2 + X2;
       Y2 = parseFloat(Y2);
@@ -164,10 +147,8 @@ console.log(antiTorySliderPercentage, 'anti')
         AQ2 = AK2*0.3;   
       }
       const AR2 = AH2 + AP2;
-      //console.log(AP2, 'AP2', AK2, 'AK2', G2, 'G2', AR2, 'AR2')
 
       let AS2 = AI2 + AQ2;
-      
 
       let AT2 = F2 === U2 ? Y2 : F2;
       let AU2 = 0;
@@ -179,28 +160,10 @@ console.log(antiTorySliderPercentage, 'anti')
       //let AY2 = 0;
       let AY2 = rawData[10]["other"][i];
       AY2 = parseFloat(AY2);
-      //console.log(AY2, 'AY2')
-      // AS2 = parseFloat(AS2);
-      // AT2 = parseFloat(AT2);
-      // AU2 = parseFloat(AU2);
-      // AV2 = parseFloat(AV2);
-      // AW2 = parseFloat(AW2);
-      // AX2 = parseFloat(AX2);
-      // AY2 = parseFloat(AY2);
 
       const range3 = Math.max(AR2, AS2, AT2, AU2, AV2, AW2, AX2, AY2);
 
-      //console.log(range3, 'range3', AY2, 'AY2')
-
       let AZ2 = AR2 === range3 ? 1 : 0;
-      // if(AZ2 === 1 && i === 173) { 
-      //   console.log(AZ2, 'AZ2', i); 
-      //   console.log(AP2, 'AP2', AK2, 'AK2', G2, 'G2', AR2, 'AR2');
-      //   console.log(range3, 'range3')
-
-      //   console.log(AR2, 'AR2', AS2, 'AS2', AT2, 'AT2', AU2, 'AU2', AV2, 'AV2', AW2, 'AW2', AX2, 'AX2', AY2, 'AY2')
-      //   console.log('AS2', AS2, AI2, AQ2)
-      // }
 
       let BA2 = AS2 === range3 ? 1 : 0;
       let BB2 = AT2 === range3 ? 1 : 0;
@@ -209,14 +172,6 @@ console.log(antiTorySliderPercentage, 'anti')
       let BE2 = AW2 === range3 ? 1 : 0;
       let BF2 = AX2 === range3 ? 1 : 0;
       let BG2 = AY2 === range3 ? 1 : 0;
-
-      //console.log(AR2, 'Ar2', AS2, 'AS2', AT2, 'AT2', AU2, 'au2', AV2, 'AV2', AW2, 'AW2', AX2, 'AX2', AY2, 'AY2')
-      if (AZ2 === 1) {
-        //console.log(AZ2, "AZ2", i, "i");
-      }
-      if (BG2 === 1) {
-        //console.log(BG2, "BG2", i, "i");
-      }
 
       conservativeSum += AZ2;
       labourSum += BA2;
@@ -299,16 +254,7 @@ console.log(antiTorySliderPercentage, 'anti')
       reform: sumVotes(rawData[58]["other"], "", true),
     }));
   }, []);
-  //setConservativeData({ nowCast: conservativeVotesNowCast });
-
-  //const conservativeVotes20191 = sumVotes(rawData[9]["Winner"], "Con", true);
-
-  // const conservatives = rawData[9]["Winner"].reduce((acc, curr) => {
-  //   if (curr === "Con") acc++;
-  //   return acc;
-  // }, 0);
-
-  // console.log(conservatives);
+  
   return (
     <>
       <h1>GE2024</h1>
@@ -380,6 +326,7 @@ console.log(antiTorySliderPercentage, 'anti')
           aria-label="Poll Slider"
           valueLabelDisplay="auto"
           onChange={handlePollSliderChange}
+          onMouseUp={() => onHandlePollsTighten(reformToggle, pollSliderPercentage, antiTorySliderPercentage)}
         />
       </Box>
 
@@ -389,6 +336,8 @@ console.log(antiTorySliderPercentage, 'anti')
           aria-label="Anti-Tory Tactical Voting"
           valueLabelDisplay="auto"
           onChange={handleAntiTorySliderChange}
+          onMouseUp={() => onHandlePollsTighten(reformToggle, pollSliderPercentage, antiTorySliderPercentage)}
+
         />
       </Box>
 
@@ -400,11 +349,7 @@ console.log(antiTorySliderPercentage, 'anti')
       </Stack>
       <p>Reform UK stand aside</p>
 
-      <Button style={{margin:'20px'}} onClick={() => onHandlePollsTighten()} variant="outlined">Submit</Button>
-
-      {/* <button onClick={() => onHandlePollsTighten(pollSliderPercentage, 0)} value="TEST POLL">
-        TEST POLL
-      </button> */}
+      {/* <Button style={{margin:'20px'}} onClick={() => onHandlePollsTighten()} variant="outlined">Submit</Button> */}
     </>
   );
 }
