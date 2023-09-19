@@ -37,7 +37,7 @@ const GESlider = ({ title, handlePollsTighten, onChangeHandler }) => {
         />
 
         <div className="slider-value">
-          <span className="value">{sliderValue}</span>
+          <span className="value">{sliderValue}%</span>
         </div>
       </div>
     </div>
