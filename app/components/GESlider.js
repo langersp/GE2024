@@ -2,8 +2,8 @@
 import Slider from "@mui/material/Slider";
 import { useState, useEffect } from "react";
 
-const GESlider = ({ title, helperText, handlePollsTighten, onChangeHandler }) => {
-  const [sliderValue, setSliderValue] = useState(0);
+const GESlider = ({ title, helperText, handlePollsTighten, onChangeHandler, defaultValue }) => {
+  const [sliderValue, setSliderValue] = useState(defaultValue);
 
   const handleSliderChange = (event) => {
     setSliderValue(event.target.value);
@@ -25,7 +25,7 @@ const GESlider = ({ title, helperText, handlePollsTighten, onChangeHandler }) =>
         {/* <input type="range" min="0" max="100" value="0" className="slider" /> */}
 
         <Slider
-          defaultValue={0}
+          defaultValue={defaultValue}
           aria-label={title}
           valueLabelDisplay="auto"
           onChange={handleSliderChange}
