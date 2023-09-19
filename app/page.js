@@ -93,7 +93,11 @@ export default function Page() {
 
   const handleReformToggle = (event) => {
     setReformToggle(event.target.checked);
-    calculateVotes(event.target.checked, pollSliderPercentage, antiTorySliderPercentage);
+    calculateVotes(
+      event.target.checked,
+      pollSliderPercentage,
+      antiTorySliderPercentage
+    );
   };
 
   const handlePollsTighten = () => {
@@ -286,6 +290,31 @@ export default function Page() {
 
         {/* Main Content */}
         <div className="main-content">
+          <div className="intro-section">
+            <div className="icon">
+              <img src="Vote_Icon.svg" alt="Icon" />
+            </div>
+
+            <div className="text">
+              <h3>THE ELECTION FORECAST</h3>
+
+              <h4>
+                Lorem ipsum ante aenean amet hac etiam felis non augue suscipit
+                tristique, condimentum dui vulputate pretium sapien rutrum
+                quisque quam placerat. Dictum massa himenaeos nulla lacinia
+                dictum velit metus erat, sapien primis placerat enim elementum
+                dolor congue ut, ornare nisi vitae feugiat habitant quisque ut.
+                Dictum massa himenaeos nulla lacinia dictum velit metus erat,
+                sapien primis placerat enim elementum dolor congue ut, ornare
+                nisi vitae feugiat habitant quisque ut.
+              </h4>
+            </div>
+
+            <div className="anchor-link">
+              <a href="#predictor-anchor">VIEW THE PREDICTOR</a>
+            </div>
+          </div>
+
           {/*Data Table Section*/}
           <div className="data-table-section" id="predictor-anchor">
             <table>
@@ -349,6 +378,26 @@ export default function Page() {
               </tbody>
             </table>
           </div>
+          {/* <!-- Seat Tracker Section --> */}
+        <div class="seat-tracker-section">
+        
+            {/* <!-- Seat Tracker Heading -->
+            <?php include 'includes/predictor-section/seat-tracker-heading.php'; ?> */}
+
+            {/* <!-- Seat Tracker Table Section --> */}
+            <div class="data-table-section seat-tracker-data-section">
+
+                {/* <!-- Seat Tracker Table Headings -->
+                <?php //include 'includes/predictor-section/seat-tracker-data-table-headings.php'; ?>
+
+                <!-- Seat Tracker Table Data -->
+                <?php include 'includes/predictor-section/seat-tracker-data-table-data.php'; ?> */}
+
+            </div>
+        
+        </div>
+
+
         </div>
       </section>
     </>
