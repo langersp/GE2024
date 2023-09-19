@@ -13,13 +13,12 @@ const GESlider = ({ title, handlePollsTighten, onChangeHandler }) => {
   return (
     <div className="slider-container">
       <div className="slider-title">
-        <span>TITLE OF THIS SLIDER GOES HERE</span>
+        <span>{title}</span>
 
         <a href="#!" className="help-icon">
           <div className="help-text">
             <p>
-              Lorem ipsum ante aenean amet hac etiam felis non augue suscipit
-              tristique, condimentum.
+            {title} info
             </p>
           </div>
         </a>

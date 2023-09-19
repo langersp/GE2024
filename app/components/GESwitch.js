@@ -7,13 +7,12 @@ const GESwitch = ({ reformToggle, handleReformToggle }) => {
   return (
     <div className="slider-container">
       <div className="slider-title">
-        <span>TITLE OF THIS SLIDER GOES HERE</span>
+        <span>Reform UK Stand Aside</span>
 
         <a href="#!" className="help-icon">
           <div className="help-text">
             <p>
-              Lorem ipsum ante aenean amet hac etiam felis non augue suscipit
-              tristique, condimentum.
+              Reform UK Stand Aside info
             </p>
           </div>
         </a>
@@ -25,7 +24,6 @@ const GESwitch = ({ reformToggle, handleReformToggle }) => {
           <Switch onChange={handleReformToggle} checked={reformToggle} />
           <Typography>Yes</Typography>
         </Stack>
-        <p>Reform UK stand aside</p>
       </div>
     </div>
   );

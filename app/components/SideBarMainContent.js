@@ -14,9 +14,10 @@ const SideBarMainContent = ({handlePollsTighten, handlePollSliderChange, handleA
 
     <div className="sliders">
 
+        <GESlider title="Polls tighten" handlePollsTighten={handlePollsTighten} onChangeHandler={handlePollSliderChange} />
+
         <GESlider title="Anti-Tory Tactical Voting" handlePollsTighten={handlePollsTighten} onChangeHandler={handleAntiTorySliderChange} />
 
-        <GESlider title="Poll Slider" handlePollsTighten={handlePollsTighten} onChangeHandler={handlePollSliderChange} />
 
         <GESwitch reformToggle={reformToggle} handleReformToggle={handleReformToggle} />
     
