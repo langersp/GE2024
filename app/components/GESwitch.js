@@ -3,16 +3,16 @@ import Switch, { SwitchProps } from "@mui/material/Switch";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 
-const GESwitch = ({ reformToggle, handleReformToggle }) => {
+const GESwitch = ({ title, helperText, reformToggle, handleReformToggle }) => {
   return (
     <div className="slider-container">
       <div className="slider-title">
-        <span>Reform UK Stand Aside</span>
+        <span>{title}</span>
 
         <a href="#!" className="help-icon">
           <div className="help-text">
             <p>
-              Reform UK Stand Aside info
+              {helperText}
             </p>
           </div>
         </a>

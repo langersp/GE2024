@@ -2,7 +2,7 @@
 import Slider from "@mui/material/Slider";
 import { useState, useEffect } from "react";
 
-const GESlider = ({ title, handlePollsTighten, onChangeHandler }) => {
+const GESlider = ({ title, helperText, handlePollsTighten, onChangeHandler }) => {
   const [sliderValue, setSliderValue] = useState(0);
 
   const handleSliderChange = (event) => {
@@ -16,7 +16,7 @@ const GESlider = ({ title, handlePollsTighten, onChangeHandler }) => {
 
         <a href="#!" className="help-icon">
           <div className="help-text">
-            <p>{title} info</p>
+            <p>{helperText}</p>
           </div>
         </a>
       </div>

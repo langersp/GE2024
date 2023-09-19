@@ -236,18 +236,29 @@ export default function Page() {
     }));
 
     let verdict = "";
-    const verdictRange = Math.max(conservativeSum, labourSum, liberalSum, reformSum, greenSum, snpSum, pcSum, otherSum);
-    if(labourSum>325) {
-      verdict = `Labour majority of ${(labourSum - 325) * 2 }`;
-    } else if(conservativeSum > 325) {
-      verdict = `Conservative majority of ${(conservativeSum - 325) * 2 }`;
+    const verdictRange = Math.max(
+      conservativeSum,
+      labourSum,
+      liberalSum,
+      reformSum,
+      greenSum,
+      snpSum,
+      pcSum,
+      otherSum
+    );
+    if (labourSum > 325) {
+      verdict = `Labour majority of ${(labourSum - 325) * 2}`;
+    } else if (conservativeSum > 325) {
+      verdict = `Conservative majority of ${(conservativeSum - 325) * 2}`;
     } else {
-      verdict = `Hung Parliament ${325 - verdictRange} seats needed for a majority`;
+      verdict = `Hung Parliament ${
+        325 - verdictRange
+      } seats needed for a majority`;
     }
 
     setVerdict(verdict);
 
-    console.log(verdict)
+    console.log(verdict);
   };
 
   useEffect(() => {
@@ -315,14 +326,16 @@ export default function Page() {
               <h3>THE ELECTION FORECAST</h3>
 
               <h4>
-                Lorem ipsum ante aenean amet hac etiam felis non augue suscipit
-                tristique, condimentum dui vulputate pretium sapien rutrum
-                quisque quam placerat. Dictum massa himenaeos nulla lacinia
-                dictum velit metus erat, sapien primis placerat enim elementum
-                dolor congue ut, ornare nisi vitae feugiat habitant quisque ut.
-                Dictum massa himenaeos nulla lacinia dictum velit metus erat,
-                sapien primis placerat enim elementum dolor congue ut, ornare
-                nisi vitae feugiat habitant quisque ut.
+                This tool lets you test the possible outcomes at the general
+                election based on three strategic questions: First, how much
+                will polls change between now and polling day? Second, how much
+                tactical voting will take place on polling day? Third, will
+                Reform UK candidates pose a meaningful challenge to Conservative
+                PPCs across the country? By answering these three questions,
+                informed by precedent and the effect that these events have had
+                in the past, you can forecast who the next Prime Minister will
+                be, what type of government they will lead, and what kind of
+                Parliament they will work with.
               </h4>
             </div>
 
@@ -344,7 +357,7 @@ export default function Page() {
 
               <div className="data-table-heading-col">
                 <span>
-                  2019 National
+                  2019 Notional 
                   <br />
                   Results
                 </span>
@@ -478,10 +491,9 @@ export default function Page() {
                 <span>{otherData["reform"]}</span>
               </div>
             </div>
-        
+
             <VoteResult verdict={verdict} />
           </div>
-
 
           {/* <!-- Seat Tracker Section --> */}
           <div className="seat-tracker-section">
