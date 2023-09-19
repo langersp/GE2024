@@ -35,7 +35,10 @@ export default function Page() {
   const [pollSliderPercentage, setPollSliderPercentage] = useState(4);
   const [antiTorySliderPercentage, setAntiTorySliderPercentage] = useState(0);
   const [reformToggle, setReformToggle] = useState(false);
-  const [verdict, setVerdict] = useState("Conservative Majority of 94");
+  const [verdict, setVerdict] = useState({
+    verdict: "Conservative Majority of 94",
+    verdictColor: "blue",
+  });
 
   const [conservativeData, setConservativeData] = useState({
     2019: 372,
@@ -235,7 +238,8 @@ export default function Page() {
       reform: otherSum,
     }));
 
-    let verdict = "";
+    let verdict = "",
+      verdictColor = "blue";
     const verdictRange = Math.max(
       conservativeSum,
       labourSum,
@@ -248,15 +252,17 @@ export default function Page() {
     );
     if (labourSum > 325) {
       verdict = `Labour majority of ${(labourSum - 325) * 2}`;
+      verdictColor = "red";
     } else if (conservativeSum > 325) {
       verdict = `Conservative majority of ${(conservativeSum - 325) * 2}`;
     } else {
       verdict = `Hung Parliament ${
         325 - verdictRange
       } seats needed for a majority`;
+      verdictColor = "yellow";
     }
 
-    setVerdict(verdict);
+    setVerdict({ verdict: verdict, verdictColor: verdictColor });
 
     console.log(verdict);
   };

@@ -1,13 +1,13 @@
 "use client";
 
-const VoteResult = ({verdict}) => {
+const VoteResult = ({ verdict }) => {
   return (
-    <div className="data-table-result">
+    <div className={`data-table-result ${verdict.verdictColor}`}>
       <span>RESULT</span>
 
       <img src="Star.svg" alt="Star" />
 
-      <span>{verdict}</span>
+      <span>{verdict.verdict}</span>
     </div>
   );
 };

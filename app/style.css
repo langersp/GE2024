@@ -853,6 +853,9 @@ h4 {
   font-weight: 700;
   text-transform: uppercase;
 }
+.data-table-section .data-table-result.red {  background: #f61149;}
+.data-table-section .data-table-result.yellow {  background: #fed523;}
+
 .data-table-section .data-table-result img {
   width: 1vw;
   margin: 0 1.5vw;
