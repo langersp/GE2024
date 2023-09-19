@@ -10,6 +10,7 @@ import Typography from "@mui/material/Typography";
 import SideBarHeader from "./components/SideBarHeader";
 import SideBarMainContent from "./components/SideBarMainContent";
 import SideBarFooter from "./components/SideBarFooter";
+import VoteResult from "./components/VoteResult";
 
 function sumVotes(partyData, lookup, convertInt) {
   return partyData.reduce((accumulator, currentValue) => {
@@ -34,6 +35,7 @@ export default function Page() {
   const [pollSliderPercentage, setPollSliderPercentage] = useState(4);
   const [antiTorySliderPercentage, setAntiTorySliderPercentage] = useState(0);
   const [reformToggle, setReformToggle] = useState(false);
+  const [verdict, setVerdict] = useState("Conservative Majority of 94");
 
   const [conservativeData, setConservativeData] = useState({
     2019: 372,
@@ -232,6 +234,20 @@ export default function Page() {
       ...values,
       reform: otherSum,
     }));
+
+    let verdict = "";
+    const verdictRange = Math.max(conservativeSum, labourSum, liberalSum, reformSum, greenSum, snpSum, pcSum, otherSum);
+    if(labourSum>325) {
+      verdict = `Labour majority of ${(labourSum - 325) * 2 }`;
+    } else if(conservativeSum > 325) {
+      verdict = `Conservative majority of ${(conservativeSum - 325) * 2 }`;
+    } else {
+      verdict = `Hung Parliament ${325 - verdictRange} seats needed for a majority`;
+    }
+
+    setVerdict(verdict);
+
+    console.log(verdict)
   };
 
   useEffect(() => {
@@ -317,87 +333,170 @@ export default function Page() {
 
           {/*Data Table Section*/}
           <div className="data-table-section" id="predictor-anchor">
-            <table>
-              <thead>
-                <tr>
-                  <th>Number of Seats in Great Britain</th>
-                  <th>2019 National Results</th>
-                  <th>Nowcast (Current Polling Averages)</th>
-                  <th>Potential 2024 Result</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Conservative</td>
-                  <td>{conservativeData["2019"]}</td>
-                  <td>{conservativeData["nowCast"]}</td>
-                  <td>{conservativeData["reform"]}</td>
-                </tr>
-                <tr>
-                  <td>Labour</td>
-                  <td>{labourData["2019"]}</td>
-                  <td>{labourData["nowCast"]}</td>
-                  <td>{labourData["reform"]}</td>
-                </tr>
-                <tr>
-                  <td>Liberal Democrats</td>
-                  <td>{liberalData["2019"]}</td>
-                  <td>{liberalData["nowCast"]}</td>
-                  <td>{liberalData["reform"]}</td>
-                </tr>
-                <tr>
-                  <td>Reform UK</td>
-                  <td>{reformData["2019"]}</td>
-                  <td>{reformData["nowCast"]}</td>
-                  <td>{reformData["reform"]}</td>
-                </tr>
-                <tr>
-                  <td>Green</td>
-                  <td>{greenData["2019"]}</td>
-                  <td>{greenData["nowCast"]}</td>
-                  <td>{greenData["reform"]}</td>
-                </tr>
-                <tr>
-                  <td>SNP</td>
-                  <td>{snpData["2019"]}</td>
-                  <td>{snpData["nowCast"]}</td>
-                  <td>{snpData["reform"]}</td>
-                </tr>
-                <tr>
-                  <td>Plaid Cymru</td>
-                  <td>{pcData["2019"]}</td>
-                  <td>{pcData["nowCast"]}</td>
-                  <td>{pcData["reform"]}</td>
-                </tr>
-                <tr>
-                  <td>Other</td>
-                  <td>{otherData["2019"]}</td>
-                  <td>{otherData["nowCast"]}</td>
-                  <td>{otherData["reform"]}</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          {/* <!-- Seat Tracker Section --> */}
-        <div class="seat-tracker-section">
+            <div className="data-table-headings">
+              <div className="data-table-heading-col">
+                <h3>
+                  NUMBER OF SEATS
+                  <br />
+                  IN GREAT BRITAIN
+                </h3>
+              </div>
+
+              <div className="data-table-heading-col">
+                <span>
+                  2019 National
+                  <br />
+                  Results
+                </span>
+              </div>
+
+              <div className="data-table-heading-col">
+                <span>
+                  Nowcast
+                  <br />
+                  (Current Polling Avg)
+                </span>
+              </div>
+
+              <div className="data-table-heading-col">
+                <span>
+                  Potential 2024
+                  <br />
+                  Election Result
+                </span>
+              </div>
+            </div>
+            <div className="data-table-row blue">
+              <div className="data-table-col">
+                <span>Conservative</span>
+              </div>
+              <div className="data-table-col">
+                <span>{conservativeData["2019"]}</span>
+              </div>
+              <div className="data-table-col">
+                <span>{conservativeData["nowCast"]}</span>
+              </div>
+              <div className="data-table-col">
+                <span>{conservativeData["reform"]}</span>
+              </div>
+            </div>
+            <div className="data-table-row red">
+              <div className="data-table-col">
+                <span>Labour</span>
+              </div>
+              <div className="data-table-col">
+                <span>{labourData["2019"]}</span>
+              </div>
+              <div className="data-table-col">
+                <span>{labourData["nowCast"]}</span>
+              </div>
+              <div className="data-table-col">
+                <span>{labourData["reform"]}</span>
+              </div>
+            </div>
+            <div className="data-table-row orange">
+              <div className="data-table-col">
+                <span>Liberal Democrats</span>
+              </div>
+              <div className="data-table-col">
+                <span>{liberalData["2019"]}</span>
+              </div>
+              <div className="data-table-col">
+                <span>{liberalData["nowCast"]}</span>
+              </div>
+              <div className="data-table-col">
+                <span>{liberalData["reform"]}</span>
+              </div>
+            </div>
+            <div className="data-table-row cyan">
+              <div className="data-table-col">
+                <span>Reform UK</span>
+              </div>
+              <div className="data-table-col">
+                <span>{reformData["2019"]}</span>
+              </div>
+              <div className="data-table-col">
+                <span>{reformData["nowCast"]}</span>
+              </div>
+              <div className="data-table-col">
+                <span>{reformData["reform"]}</span>
+              </div>
+            </div>
+            <div className="data-table-row lightgreen">
+              <div className="data-table-col">
+                <span>Green</span>
+              </div>
+              <div className="data-table-col">
+                <span>{greenData["2019"]}</span>
+              </div>
+              <div className="data-table-col">
+                <span>{greenData["nowCast"]}</span>
+              </div>
+              <div className="data-table-col">
+                <span>{greenData["reform"]}</span>
+              </div>
+            </div>
+            <div className="data-table-row yellow">
+              <div className="data-table-col">
+                <span>SNP</span>
+              </div>
+              <div className="data-table-col">
+                <span>{snpData["2019"]}</span>
+              </div>
+              <div className="data-table-col">
+                <span>{snpData["nowCast"]}</span>
+              </div>
+              <div className="data-table-col">
+                <span>{snpData["reform"]}</span>
+              </div>
+            </div>
+            <div className="data-table-row darkgreen">
+              <div className="data-table-col">
+                <span>Plaid Cymru</span>
+              </div>
+              <div className="data-table-col">
+                <span>{pcData["2019"]}</span>
+              </div>
+              <div className="data-table-col">
+                <span>{pcData["nowCast"]}</span>
+              </div>
+              <div className="data-table-col">
+                <span>{pcData["reform"]}</span>
+              </div>
+            </div>
+            <div className="data-table-row grey">
+              <div className="data-table-col">
+                <span>Other</span>
+              </div>
+              <div className="data-table-col">
+                <span>{otherData["2019"]}</span>
+              </div>
+              <div className="data-table-col">
+                <span>{otherData["nowCast"]}</span>
+              </div>
+              <div className="data-table-col">
+                <span>{otherData["reform"]}</span>
+              </div>
+            </div>
         
+            <VoteResult verdict={verdict} />
+          </div>
+
+
+          {/* <!-- Seat Tracker Section --> */}
+          <div className="seat-tracker-section">
             {/* <!-- Seat Tracker Heading -->
             <?php include 'includes/predictor-section/seat-tracker-heading.php'; ?> */}
 
             {/* <!-- Seat Tracker Table Section --> */}
-            <div class="data-table-section seat-tracker-data-section">
-
-                {/* <!-- Seat Tracker Table Headings -->
+            <div className="data-table-section seat-tracker-data-section">
+              {/* <!-- Seat Tracker Table Headings -->
                 <?php //include 'includes/predictor-section/seat-tracker-data-table-headings.php'; ?>
 
                 <!-- Seat Tracker Table Data -->
                 <?php include 'includes/predictor-section/seat-tracker-data-table-data.php'; ?> */}
-
             </div>
-        
-        </div>
-
-
+          </div>
         </div>
       </section>
     </>

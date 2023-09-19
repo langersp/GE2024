@@ -841,6 +841,7 @@ h4 {
   font-size: 1.4vw;
   border-radius: 1.5vw;
   font-weight: 700;
+  text-transform: uppercase;
 }
 .data-table-section .data-table-result img {
   width: 1vw;

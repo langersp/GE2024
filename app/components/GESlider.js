@@ -3,13 +3,12 @@ import Slider from "@mui/material/Slider";
 import { useState, useEffect } from "react";
 
 const GESlider = ({ title, handlePollsTighten, onChangeHandler }) => {
-
   const [sliderValue, setSliderValue] = useState(0);
 
   const handleSliderChange = (event) => {
-    setSliderValue(event.target.value)
+    setSliderValue(event.target.value);
     onChangeHandler(event.target.value);
-  }
+  };
   return (
     <div className="slider-container">
       <div className="slider-title">
@@ -17,9 +16,7 @@ const GESlider = ({ title, handlePollsTighten, onChangeHandler }) => {
 
         <a href="#!" className="help-icon">
           <div className="help-text">
-            <p>
-            {title} info
-            </p>
+            <p>{title} info</p>
           </div>
         </a>
       </div>
@@ -33,6 +30,23 @@ const GESlider = ({ title, handlePollsTighten, onChangeHandler }) => {
           valueLabelDisplay="auto"
           onChange={handleSliderChange}
           onMouseUp={() => handlePollsTighten()}
+          sx={{
+            width: 300,
+            width: "100%",
+            margin: "0",
+            height: "0.5vw",
+            borderRadius: "0.25vw",
+            color:'#fff',
+            '& .MuiSlider-thumb': {       
+              appearance: 'none',
+              width: '1.5vw',
+              height: '1.5vw',
+              borderRadius: '50%',
+              background: '#fff',
+              border: '0.3vw solid red',
+              cursor: 'pointer',
+            }
+          }}
         />
 
         <div className="slider-value">

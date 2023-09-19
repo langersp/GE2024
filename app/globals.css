@@ -31,7 +31,7 @@ h1 {
   font-weight:bold
 }
 
-table {
+/* table {
   border-collapse: separate;
   width:100%;
   margin:10px
@@ -48,4 +48,4 @@ table tr {
 table td {
   background:#eee;
   padding:10px
-}
+} */
