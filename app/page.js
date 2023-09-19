@@ -3,13 +3,13 @@
 import Image from "next/image";
 import rawData from "./data/ge2024-v5.json";
 import { useState, useEffect } from "react";
-import Slider from "@mui/material/Slider";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import Switch, { SwitchProps } from '@mui/material/Switch';
-import Stack from '@mui/material/Stack';
-import Typography from '@mui/material/Typography';
+import Typography from "@mui/material/Typography";
 
+import SideBarHeader from "./components/SideBarHeader";
+import SideBarMainContent from "./components/SideBarMainContent";
+import SideBarFooter from "./components/SideBarFooter";
 
 function sumVotes(partyData, lookup, convertInt) {
   return partyData.reduce((accumulator, currentValue) => {
@@ -31,7 +31,6 @@ function sumVotes(partyData, lookup, convertInt) {
 }
 
 export default function Page() {
-
   const [pollSliderPercentage, setPollSliderPercentage] = useState(4);
   const [antiTorySliderPercentage, setAntiTorySliderPercentage] = useState(0);
   const [reformToggle, setReformToggle] = useState(false);
@@ -84,21 +83,32 @@ export default function Page() {
     reform: 0,
   });
 
-  const handlePollSliderChange = (event, newValue) => {
+  const handlePollSliderChange = (newValue) => {
     setPollSliderPercentage(newValue);
   };
 
-  const handleAntiTorySliderChange = (event, newValue) => {
+  const handleAntiTorySliderChange = (newValue) => {
     setAntiTorySliderPercentage(newValue);
   };
 
   const handleReformToggle = (event) => {
-    setReformToggle(event.target.checked)
-    onHandlePollsTighten(event.target.checked, pollSliderPercentage, antiTorySliderPercentage)
-  }
-  
-  const onHandlePollsTighten = (reformToggle, pollSliderPercentage, antiTorySliderPercentage) => {
-    
+    setReformToggle(event.target.checked);
+    calculateVotes(event.target.checked, pollSliderPercentage, antiTorySliderPercentage);
+  };
+
+  const handlePollsTighten = () => {
+    calculateVotes(
+      reformToggle,
+      pollSliderPercentage,
+      antiTorySliderPercentage
+    );
+  };
+
+  const calculateVotes = (
+    reformToggle,
+    pollSliderPercentage,
+    antiTorySliderPercentage
+  ) => {
     let conservativeSum = 0,
       labourSum = 0,
       liberalSum = 0,
@@ -109,8 +119,8 @@ export default function Page() {
       otherSum = 0;
 
     for (let i = 0; i <= 631; i++) {
-      
-      let AP2 = 0, AQ2 = 0;
+      let AP2 = 0,
+        AQ2 = 0;
 
       const E2 = rawData[2]["Lab"][i] - pollSliderPercentage / 100;
       let F2 = rawData[5]["Lib"][i];
@@ -131,10 +141,10 @@ export default function Page() {
       const U2 = Math.max(range1, range2);
 
       let AH2 = parseFloat(rawData[1]["Con"][i]) + pollSliderPercentage / 100;
-      
+
       const W2 = V2 - U2;
 
-      const X2 = W2 * antiTorySliderPercentage / 100;
+      const X2 = (W2 * antiTorySliderPercentage) / 100;
 
       let Y2 = U2 + X2;
       Y2 = parseFloat(Y2);
@@ -142,9 +152,9 @@ export default function Page() {
       const AI2 = E2 === U2 ? Y2 : E2;
       const AK2 = G2 === U2 ? Y2 : G2;
 
-      if(reformToggle) {
-        AP2 = AK2*0.7;
-        AQ2 = AK2*0.3;   
+      if (reformToggle) {
+        AP2 = AK2 * 0.7;
+        AQ2 = AK2 * 0.3;
       }
       const AR2 = AH2 + AP2;
 
@@ -254,102 +264,93 @@ export default function Page() {
       reform: sumVotes(rawData[58]["other"], "", true),
     }));
   }, []);
-  
+
   return (
     <>
-      <h1>GE2024</h1>
+      {/*Predictor Section*/}
+      <section className="predictor-section content-with-sidebar">
+        {/*Sidebar Section*/}
+        <div className="sidebar">
+          <SideBarHeader />
+          <div className="sidebar-main-container">
+            <SideBarMainContent
+              handlePollsTighten={handlePollsTighten}
+              handlePollSliderChange={handlePollSliderChange}
+              handleAntiTorySliderChange={handleAntiTorySliderChange}
+              handleReformToggle={handleReformToggle}
+              reformToggle={reformToggle}
+            />
+            <SideBarFooter />
+          </div>
+        </div>
 
-      <table>
-        <thead>
-          <tr>
-            <th>Number of Seats in Great Britain</th>
-            <th>2019 National Results</th>
-            <th>Nowcast (Current Polling Averages)</th>
-            <th>Potential 2024 Result</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Conservative</td>
-            <td>{conservativeData["2019"]}</td>
-            <td>{conservativeData["nowCast"]}</td>
-            <td>{conservativeData["reform"]}</td>
-          </tr>
-          <tr>
-            <td>Labour</td>
-            <td>{labourData["2019"]}</td>
-            <td>{labourData["nowCast"]}</td>
-            <td>{labourData["reform"]}</td>
-          </tr>
-          <tr>
-            <td>Liberal Democrats</td>
-            <td>{liberalData["2019"]}</td>
-            <td>{liberalData["nowCast"]}</td>
-            <td>{liberalData["reform"]}</td>
-          </tr>
-          <tr>
-            <td>Reform UK</td>
-            <td>{reformData["2019"]}</td>
-            <td>{reformData["nowCast"]}</td>
-            <td>{reformData["reform"]}</td>
-          </tr>
-          <tr>
-            <td>Green</td>
-            <td>{greenData["2019"]}</td>
-            <td>{greenData["nowCast"]}</td>
-            <td>{greenData["reform"]}</td>
-          </tr>
-          <tr>
-            <td>SNP</td>
-            <td>{snpData["2019"]}</td>
-            <td>{snpData["nowCast"]}</td>
-            <td>{snpData["reform"]}</td>
-          </tr>
-          <tr>
-            <td>Plaid Cymru</td>
-            <td>{pcData["2019"]}</td>
-            <td>{pcData["nowCast"]}</td>
-            <td>{pcData["reform"]}</td>
-          </tr>
-          <tr>
-            <td>Other</td>
-            <td>{otherData["2019"]}</td>
-            <td>{otherData["nowCast"]}</td>
-            <td>{otherData["reform"]}</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <Box sx={{ width: 300 }} style={{margin:'20px'}}>
-        <Slider
-          defaultValue={0}
-          aria-label="Poll Slider"
-          valueLabelDisplay="auto"
-          onChange={handlePollSliderChange}
-          onMouseUp={() => onHandlePollsTighten(reformToggle, pollSliderPercentage, antiTorySliderPercentage)}
-        />
-      </Box>
-
-      <Box sx={{ width: 300 }} style={{margin:'20px'}}>
-        <Slider
-          defaultValue={0}
-          aria-label="Anti-Tory Tactical Voting"
-          valueLabelDisplay="auto"
-          onChange={handleAntiTorySliderChange}
-          onMouseUp={() => onHandlePollsTighten(reformToggle, pollSliderPercentage, antiTorySliderPercentage)}
-
-        />
-      </Box>
-
-
-      <Stack direction="row" spacing={1} alignItems="center">
-        <Typography>No</Typography>
-        <Switch onChange={handleReformToggle} checked={reformToggle} />
-        <Typography>Yes</Typography>
-      </Stack>
-      <p>Reform UK stand aside</p>
-
-      {/* <Button style={{margin:'20px'}} onClick={() => onHandlePollsTighten()} variant="outlined">Submit</Button> */}
+        {/* Main Content */}
+        <div className="main-content">
+          {/*Data Table Section*/}
+          <div className="data-table-section" id="predictor-anchor">
+            <table>
+              <thead>
+                <tr>
+                  <th>Number of Seats in Great Britain</th>
+                  <th>2019 National Results</th>
+                  <th>Nowcast (Current Polling Averages)</th>
+                  <th>Potential 2024 Result</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Conservative</td>
+                  <td>{conservativeData["2019"]}</td>
+                  <td>{conservativeData["nowCast"]}</td>
+                  <td>{conservativeData["reform"]}</td>
+                </tr>
+                <tr>
+                  <td>Labour</td>
+                  <td>{labourData["2019"]}</td>
+                  <td>{labourData["nowCast"]}</td>
+                  <td>{labourData["reform"]}</td>
+                </tr>
+                <tr>
+                  <td>Liberal Democrats</td>
+                  <td>{liberalData["2019"]}</td>
+                  <td>{liberalData["nowCast"]}</td>
+                  <td>{liberalData["reform"]}</td>
+                </tr>
+                <tr>
+                  <td>Reform UK</td>
+                  <td>{reformData["2019"]}</td>
+                  <td>{reformData["nowCast"]}</td>
+                  <td>{reformData["reform"]}</td>
+                </tr>
+                <tr>
+                  <td>Green</td>
+                  <td>{greenData["2019"]}</td>
+                  <td>{greenData["nowCast"]}</td>
+                  <td>{greenData["reform"]}</td>
+                </tr>
+                <tr>
+                  <td>SNP</td>
+                  <td>{snpData["2019"]}</td>
+                  <td>{snpData["nowCast"]}</td>
+                  <td>{snpData["reform"]}</td>
+                </tr>
+                <tr>
+                  <td>Plaid Cymru</td>
+                  <td>{pcData["2019"]}</td>
+                  <td>{pcData["nowCast"]}</td>
+                  <td>{pcData["reform"]}</td>
+                </tr>
+                <tr>
+                  <td>Other</td>
+                  <td>{otherData["2019"]}</td>
+                  <td>{otherData["nowCast"]}</td>
+                  <td>{otherData["reform"]}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
