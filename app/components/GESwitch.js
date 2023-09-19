@@ -11,18 +11,70 @@ const GESwitch = ({ title, helperText, reformToggle, handleReformToggle }) => {
 
         <a href="#!" className="help-icon">
           <div className="help-text">
-            <p>
-              {helperText}
-            </p>
+            <p>{helperText}</p>
           </div>
         </a>
       </div>
 
       <div className="selector">
         <Stack direction="row" spacing={1} alignItems="center">
-          <Typography>No</Typography>
-          <Switch onChange={handleReformToggle} checked={reformToggle} />
-          <Typography>Yes</Typography>
+          <Typography
+            style={{
+              background: "#f01e5b",
+              color: "#060e31",
+              display: "flex",
+              width: "3.5vw",
+              height: "3.5vw",
+              borderRadius: "50%",
+              justifyContent: "center",
+              webkitBoxAlign: "center",
+              msFlexAlign: "center",
+              alignItems: "center",
+              webkitTransition: "0.3s ease-in-out",
+              transition: "0.3s ease-in-out",
+              cursor: "pointer",
+              fontWeight: "700",
+            }}
+            className="switch-text"
+          >
+            No
+          </Typography>
+          <Switch
+            onChange={handleReformToggle}
+            checked={reformToggle}
+            sx={{
+              display: "-webkit-box",
+              display: "-ms-flexbox",
+              display: "flex",
+              webkitBoxPack: "justify",
+              msFlexPack: "justify",
+              justifyContent: "space-between",
+              webkitBoxAlign: "center",
+              msflexalign: "center",
+              alignItems: "center",
+              paddingTop: "1.5vw",
+            }}
+          />
+          <Typography
+            style={{
+              background: "#f01e5b",
+              color: "#060e31",
+              display: "flex",
+              width: "3.5vw",
+              height: "3.5vw",
+              borderRadius: "50%",
+              justifyContent: "center",
+              webkitBoxAlign: "center",
+              msFlexAlign: "center",
+              alignItems: "center",
+              webkitTransition: "0.3s ease-in-out",
+              transition: "0.3s ease-in-out",
+              cursor: "pointer",
+              fontWeight: "700",
+            }}
+          >
+            Yes
+          </Typography>
         </Stack>
       </div>
     </div>

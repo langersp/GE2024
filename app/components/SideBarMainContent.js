@@ -13,7 +13,7 @@ const SideBarMainContent = ({
     <div className="sidebar-main-content">
       <h2>THE NUMBER OF SEATS IN GREAT BRITAIN</h2>
 
-      <p>Lorem ipsum ante aenean amet hac etiam felis non augue suscipit.</p>
+      {/* <p>Lorem ipsum ante aenean amet hac etiam felis non augue suscipit.</p> */}
 
       <div className="sliders">
         <GESlider
