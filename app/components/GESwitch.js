@@ -35,7 +35,7 @@ const GESwitch = ({ title, helperText, reformToggle, handleReformToggle }) => {
               cursor: "pointer",
               fontWeight: "700",
             }}
-            className="switch-text"
+            className="switch-text active"
           >
             No
           </Typography>
@@ -57,8 +57,6 @@ const GESwitch = ({ title, helperText, reformToggle, handleReformToggle }) => {
           />
           <Typography
             style={{
-              background: "#f01e5b",
-              color: "#060e31",
               display: "flex",
               width: "3.5vw",
               height: "3.5vw",
@@ -72,6 +70,8 @@ const GESwitch = ({ title, helperText, reformToggle, handleReformToggle }) => {
               cursor: "pointer",
               fontWeight: "700",
             }}
+            className="switch-text"
+
           >
             Yes
           </Typography>

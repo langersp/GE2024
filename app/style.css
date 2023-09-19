@@ -384,17 +384,18 @@ h4 {
   color: #060e31;
   font-weight: 700;
 }
+
 .slider-container .selector {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
-          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   padding-top: 1.5vw;
+  justify-content: space-evenly;
 }
 .slider-container .switch-text {
   display: -webkit-box;
@@ -430,7 +431,14 @@ h4 {
   background: #fff;
   border-radius: 0.25vw;
 }
-
+.MuiSwitch-root {height: 36px;}
+.MuiSwitch-track {
+  background: #fff;
+  opacity: 0.35;
+}
+.Mui-checked+.MuiSwitch-track { opacity: 1!important; background: #fff!important;}
+.MuiSwitch-thumb {background: #fff!important;opacity: 0.75!important;}
+.Mui-checked .MuiSwitch-thumb {opacity: 1!important;}
 /*
 *** End of Components ***
 */
