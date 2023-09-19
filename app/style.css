@@ -38,6 +38,7 @@ p {
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
+  font-weight: 700;
 }
 
 h1 {
@@ -284,6 +285,7 @@ h4 {
   display: block;
   line-height: 1.5vw;
   font-weight: 700;
+  text-transform: uppercase;
 }
 .slider-container .slider-title a {
   display: block;
