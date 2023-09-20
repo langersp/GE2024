@@ -33,7 +33,7 @@ function sumVotes(partyData, lookup, convertInt) {
 
 export default function Page() {
   const [pollSliderPercentage, setPollSliderPercentage] = useState(4);
-  const [antiTorySliderPercentage, setAntiTorySliderPercentage] = useState(0);
+  const [antiTorySliderPercentage, setAntiTorySliderPercentage] = useState(20);
   const [reformToggle, setReformToggle] = useState(true);
   const [verdict, setVerdict] = useState({
     verdict: "Conservative Majority of 94",
