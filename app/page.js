@@ -523,7 +523,7 @@ export default function Page() {
                 </div>
 
                 <div className="data-table-col result-bar">
-                  <span></span>
+                  <span style={{width: `${conservativeData["reform"]/632 * 100}%`}}></span>
                 </div>
 
                 <div className="data-table-col">
@@ -537,7 +537,7 @@ export default function Page() {
                 </div>
 
                 <div className="data-table-col result-bar">
-                  <span></span>
+                  <span style={{width: `${labourData["reform"]/632 * 100}%`}}></span>
                 </div>
 
                 <div className="data-table-col">
@@ -551,7 +551,7 @@ export default function Page() {
                 </div>
 
                 <div className="data-table-col result-bar">
-                  <span></span>
+                  <span style={{width: `${liberalData["reform"]/632 * 100}%`}}></span>
                 </div>
 
                 <div className="data-table-col">
@@ -565,7 +565,7 @@ export default function Page() {
                 </div>
 
                 <div className="data-table-col result-bar">
-                  <span></span>
+                  <span style={{width: `${reformData["reform"]/632 * 100}%`}}></span>
                 </div>
 
                 <div className="data-table-col">
@@ -579,7 +579,7 @@ export default function Page() {
                 </div>
 
                 <div className="data-table-col result-bar">
-                  <span></span>
+                  <span style={{width: `${greenData["reform"]/632 * 100}%`}}></span>
                 </div>
 
                 <div className="data-table-col">
@@ -593,7 +593,7 @@ export default function Page() {
                 </div>
 
                 <div className="data-table-col result-bar">
-                  <span></span>
+                  <span style={{width: `${snpData["reform"]/632 * 100}%`}}></span>
                 </div>
 
                 <div className="data-table-col">
@@ -607,7 +607,7 @@ export default function Page() {
                 </div>
 
                 <div className="data-table-col result-bar">
-                  <span></span>
+                  <span style={{width: `${pcData["reform"]/632 * 100}%`}}></span>
                 </div>
 
                 <div className="data-table-col">
@@ -621,7 +621,7 @@ export default function Page() {
                 </div>
 
                 <div className="data-table-col result-bar">
-                  <span></span>
+                  <span style={{width: `${otherData["reform"]/632 * 100}%`}}></span>
                 </div>
 
                 <div className="data-table-col">
