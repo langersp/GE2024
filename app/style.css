@@ -417,7 +417,7 @@ h4 {
   cursor: pointer;
   font-weight: 700;
 }
-.slider-container .selector button.active {
+.slider-container .selector button.active, .MuiTypography-root.active {
   background: #f01e5b;
   color: #060e31;
 }

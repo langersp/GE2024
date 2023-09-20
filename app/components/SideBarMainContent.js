@@ -29,7 +29,7 @@ const SideBarMainContent = ({
           helperText="Ahead of the 2019 General Election, YouGov found 19% of people planned to vote tactically. While polling published after election found 32% of people said they voted tactically in 2019. Earlier this year, in the Selby and Ainsty and Uxbridge by-elections, the Liberal Democrats saw their vote share fall by 5.3 percentage points and 4.6 percentage points respectively. While in the Somerton and Frome by-election, Labour’s vote share fell 10.3 percentage points."
           handlePollsTighten={handlePollsTighten}
           onChangeHandler={handleAntiTorySliderChange}
-          defaultValue={0}
+          defaultValue={20}
         />
 
         <GESwitch

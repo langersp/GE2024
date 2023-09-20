@@ -4,6 +4,10 @@ import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 
 const GESwitch = ({ title, helperText, reformToggle, handleReformToggle }) => {
+  const handleSwitch = () => {
+    handleReformToggle();
+  };
+
   return (
     <div className="slider-container">
       <div className="slider-title">
@@ -20,8 +24,6 @@ const GESwitch = ({ title, helperText, reformToggle, handleReformToggle }) => {
         <Stack direction="row" spacing={1} alignItems="center">
           <Typography
             style={{
-              background: "#f01e5b",
-              color: "#060e31",
               display: "flex",
               width: "3.5vw",
               height: "3.5vw",
@@ -35,7 +37,7 @@ const GESwitch = ({ title, helperText, reformToggle, handleReformToggle }) => {
               cursor: "pointer",
               fontWeight: "700",
             }}
-            className="switch-text active"
+            className={`switch-text ${!reformToggle ? "active" : ""}`}
           >
             No
           </Typography>
@@ -70,8 +72,7 @@ const GESwitch = ({ title, helperText, reformToggle, handleReformToggle }) => {
               cursor: "pointer",
               fontWeight: "700",
             }}
-            className="switch-text"
-
+            className={`switch-text ${reformToggle ? "active" : ""}`}
           >
             Yes
           </Typography>

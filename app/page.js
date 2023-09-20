@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import rawData from "./data/ge2024-v5.json";
+import rawData from "./data/ge2024-v6.json";
 import { useState, useEffect } from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
@@ -34,7 +34,7 @@ function sumVotes(partyData, lookup, convertInt) {
 export default function Page() {
   const [pollSliderPercentage, setPollSliderPercentage] = useState(4);
   const [antiTorySliderPercentage, setAntiTorySliderPercentage] = useState(0);
-  const [reformToggle, setReformToggle] = useState(false);
+  const [reformToggle, setReformToggle] = useState(true);
   const [verdict, setVerdict] = useState({
     verdict: "Conservative Majority of 94",
     verdictColor: "blue",
