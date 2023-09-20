@@ -36,8 +36,8 @@ export default function Page() {
   const [antiTorySliderPercentage, setAntiTorySliderPercentage] = useState(20);
   const [reformToggle, setReformToggle] = useState(true);
   const [verdict, setVerdict] = useState({
-    verdict: "Conservative Majority of 94",
-    verdictColor: "blue",
+    verdict: "Labour Majority of 10",
+    verdictColor: "red",
   });
 
   const [conservativeData, setConservativeData] = useState({
