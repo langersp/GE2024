@@ -49,7 +49,7 @@ export default function Page() {
 
             <div className="quote">
 
-              <blockquote>"Lorem ipsum ante aenean amet hac etiam felis non augue suscipit tristique, condimentum dui vulputate pretium sapien rutrum quisque quam placerat. Dictum massa himenaeos nulla lacinia dictum velit metus erat."</blockquote>
+              <blockquote>&quote;Lorem ipsum ante aenean amet hac etiam felis non augue suscipit tristique, condimentum dui vulputate pretium sapien rutrum quisque quam placerat. Dictum massa himenaeos nulla lacinia dictum velit metus erat.&quote;</blockquote>
 
               <span className="author">Ben Thornton - Founding Partner</span>
 
