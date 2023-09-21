@@ -1,13 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import { useState, useEffect } from "react";
 
 import SideBarHeader from "../components/SideBarHeader";
 import SideBarMainContent from "../components/SideBarMainContent";
 import SideBarFooter from "../components/SideBarFooter";
-import VoteResult from "../components/VoteResult";
-
 
 export default function Page() {
 
