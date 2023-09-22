@@ -259,7 +259,7 @@ export default function Page() {
       verdict = `Hung Parliament ${
         325 - verdictRange
       } seats needed for a majority`;
-      verdictColor = "yellow";
+      verdictColor = "navy";
     }
 
     setVerdict({ verdict: verdict, verdictColor: verdictColor });

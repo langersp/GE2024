@@ -822,6 +822,14 @@ h4 {
 .data-table-section .data-table-row.yellow {
   border-color: #fed523;
 }
+
+.data-table-section .data-table-row.navy > div:first-of-type::before {
+  background: #020a2d;
+}
+.data-table-section .data-table-row.navy {
+  border-color: #020a2d;
+}
+
 .data-table-section .data-table-row.yellow > div:first-of-type::before {
   background: #fed523;
 }
