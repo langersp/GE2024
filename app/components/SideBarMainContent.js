@@ -22,6 +22,7 @@ const SideBarMainContent = ({
           handlePollsTighten={handlePollsTighten}
           onChangeHandler={handlePollSliderChange}
           defaultValue={4}
+          maxValue={20}
         />
 
         <GESlider

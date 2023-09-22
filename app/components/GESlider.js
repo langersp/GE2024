@@ -8,6 +8,7 @@ const GESlider = ({
   handlePollsTighten,
   onChangeHandler,
   defaultValue,
+  maxValue
 }) => {
   const [sliderValue, setSliderValue] = useState(defaultValue);
 
@@ -37,7 +38,7 @@ const GESlider = ({
           onChange={handleSliderChange}
           onMouseUp={() => handlePollsTighten()}
           min={0}
-          max={20}
+          max={maxValue}
           sx={{
             width: 300,
             width: "100%",
