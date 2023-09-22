@@ -283,7 +283,7 @@ h4 {
 }
 .slider-container .slider-title span {
   display: block;
-  line-height: 1.5vw;
+  line-height: 1.2vw;
   font-weight: 700;
   text-transform: uppercase;
 }
@@ -434,7 +434,8 @@ h4 {
 .MuiSwitch-root {height: 36px;}
 .MuiSwitch-track {
   background: #fff;
-  opacity: 0.35;
+  opacity: 1;
+  
 }
 .Mui-checked+.MuiSwitch-track { opacity: 1!important; background: #fff!important;}
 .MuiSwitch-thumb {background: #fff!important;opacity: 0.75!important;}

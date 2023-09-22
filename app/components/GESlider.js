@@ -45,7 +45,7 @@ const GESlider = ({
             margin: "0",
             height: "0.5vw",
             borderRadius: "0.25vw",
-            color: "#fff",
+            color: "#f01e5b",
             "& .MuiSlider-thumb": {
               appearance: "none",
               width: "1.5vw",
@@ -54,6 +54,10 @@ const GESlider = ({
               background: "#fff",
               border: "0.3vw solid red",
               cursor: "pointer",
+            },
+            "& .MuiSlider-rail": {
+              color:"#fff",
+              opacity: "1"
             },
           }}
         />
