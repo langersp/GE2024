@@ -365,7 +365,7 @@ h4 {
 }
 .slider-container .slider-value {
   position: absolute;
-  top: 2vw;
+  top: 1.6vw;
   right: 0;
   width: 3.5vw;
   height: 3.5vw;
@@ -576,8 +576,8 @@ h4 {
 }
 .about-section blockquote {
   margin: 0;
-  line-height: 1.4vw;
-  font-size: 1.3vw;
+  line-height: 1.3vw;
+  font-size: 1.1vw;
   font-weight: 700;
   font-style: italic;
   margin-bottom: 1vw;
@@ -864,6 +864,7 @@ h4 {
 }
 .data-table-section .data-table-result.red {  background: #f61149;}
 .data-table-section .data-table-result.yellow {  background: #fed523;}
+.data-table-section .data-table-result.navy  { background: #020a2d;}
 
 .data-table-section .data-table-result img {
   width: 1vw;

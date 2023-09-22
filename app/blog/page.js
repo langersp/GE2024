@@ -24,11 +24,11 @@ export default function Page() {
             <div className="sidebar-main-content">
               <h2>RELATED BLOGS</h2>
 
-              <p>
+              {/* <p>
                 Lorem ipsum ante aenean amet hac etiam felis non augue suscipit
                 tristique, condimentum dui vulputate pretium sapien rutrum
                 quisque quam placerat.
-              </p>
+              </p> */}
             </div>
             <SideBarFooter />
             <div className="open-menu-container">
@@ -46,7 +46,7 @@ export default function Page() {
                   <img src="../Background_Image.jpg" alt="Blog Image" />
                 </div>
 
-                <a href="#" className="blog-link"></a>
+                <a href="https://www.5654.co.uk/our-perspective/is-a-labour-majority-inevitable" target="_blank" className="blog-link"></a>
 
                 <div className="blog-excerpt">
                   <p>
@@ -61,7 +61,7 @@ export default function Page() {
                   <img src="../Background_Image.jpg" alt="Blog Image" />
                 </div>
 
-                <a href="#" className="blog-link"></a>
+                <a href="https://www.5654.co.uk/our-perspective/the-switchers-and-the-undecideds" target="_blank" className="blog-link"></a>
 
                 <div className="blog-excerpt">
                   <p>
@@ -76,7 +76,7 @@ export default function Page() {
                   <img src="../Background_Image.jpg" alt="Blog Image" />
                 </div>
 
-                <a href="#" className="blog-link"></a>
+                <a href="https://www.5654.co.uk/our-perspective/think-tanks-that-matter" target="_blank" className="blog-link"></a>
 
                 <div className="blog-excerpt">
                   <p>
@@ -87,7 +87,7 @@ export default function Page() {
               </div>
             </div>
 
-            <div className="blog-tiles">
+            {/* <div className="blog-tiles">
               <div className="blog-tile">
                 <div className="blog-img">
                   <img src="../Background_Image.jpg" alt="Blog Image" />
@@ -132,7 +132,7 @@ export default function Page() {
                   </p>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>

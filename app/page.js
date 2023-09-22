@@ -96,10 +96,8 @@ export default function Page() {
           </div>
 
           <div className="landing-btn">
-            <a href="#" className="btn red">
-              CALL TO ACTION TITLE
-              <br />
-              GOES HERE LOREM
+            <a href="/predictor" className="btn red">
+             Make Your Prediction
             </a>
           </div>
         </div>
@@ -111,7 +109,7 @@ export default function Page() {
                 <img src="../Background_Image.jpg" alt="Blog Image" />
               </div>
 
-              <a href="#" className="blog-link"></a>
+              <a href="https://www.5654.co.uk/our-perspective/is-a-labour-majority-inevitable" target="_blank" className="blog-link"></a>
 
               <div className="blog-excerpt">
                 <p>
@@ -126,7 +124,7 @@ export default function Page() {
                 <img src="../Background_Image.jpg" alt="Blog Image" />
               </div>
 
-              <a href="#" className="blog-link"></a>
+              <a href="https://www.5654.co.uk/our-perspective/the-switchers-and-the-undecideds" target="_blank" className="blog-link"></a>
 
               <div className="blog-excerpt">
                 <p>
@@ -141,7 +139,7 @@ export default function Page() {
                 <img src="../Background_Image.jpg" alt="Blog Image" />
               </div>
 
-              <a href="#" className="blog-link"></a>
+              <a href="https://www.5654.co.uk/our-perspective/think-tanks-that-matter" target="_blank" className="blog-link"></a>
 
               <div className="blog-excerpt">
                 <p>

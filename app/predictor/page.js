@@ -315,7 +315,7 @@ export default function Page() {
       <section className="predictor-section content-with-sidebar">
         {/*Sidebar Section*/}
         <div className={`sidebar ${menuState ? "menu-active" : ""}`}>
-          <SideBarHeader handleMenu={handleMenu}  />
+          <SideBarHeader handleMenu={handleMenu} />
           <div className="sidebar-main-container">
             <SideBarMainContent
               handlePollsTighten={handlePollsTighten}
@@ -324,10 +324,17 @@ export default function Page() {
               handleReformToggle={handleReformToggle}
               reformToggle={reformToggle}
             />
-            <SideBarFooter />
+            <div className="sidebar-footer">
+              <img src="../Footer_Logo.svg" alt="Logo" />
+
+              <img
+                className="colour-strip"
+                src="../Footer_Colour_Strip.svg"
+                alt="Colour Strip"
+              />
+            </div>
             <div className="open-menu-container">
               <Menu />
-              <SideBarMenuFooter />
             </div>
           </div>
         </div>
