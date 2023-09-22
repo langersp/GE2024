@@ -1,18 +1,25 @@
 "use client";
 
 import Image from "next/image";
+import { useState, useEffect } from "react";
 
 import SideBarHeader from "../components/SideBarHeader";
 import SideBarMainContent from "../components/SideBarMainContent";
 import SideBarFooter from "../components/SideBarFooter";
+import Menu from "../components/Menu";
+import SideBarMenuFooter from "../components/SideBarMenuFooter";
 
 export default function Page() {
+  const [menuState, setMenuState] = useState(false);
+
+  const handleMenu = () => {
+    setMenuState(!menuState);
+  };
   return (
     <>
       <section className="blog-section content-with-sidebar">
-        {/*Sidebar Section*/}
-        <div className="sidebar">
-          <SideBarHeader />
+        <div className={`sidebar ${menuState ? 'menu-active' : ''}`}>
+          <SideBarHeader handleMenu={handleMenu} />
           <div className="sidebar-main-container">
             <div className="sidebar-main-content">
               <h2>RELATED BLOGS</h2>
@@ -24,6 +31,10 @@ export default function Page() {
               </p>
             </div>
             <SideBarFooter />
+            <div className="open-menu-container">
+              <Menu />
+              <SideBarMenuFooter />
+            </div>
           </div>
         </div>
 

@@ -11,6 +11,8 @@ import SideBarHeader from "../components/SideBarHeader";
 import SideBarMainContent from "../components/SideBarMainContent";
 import SideBarFooter from "../components/SideBarFooter";
 import VoteResult from "../components/VoteResult";
+import Menu from "../components/Menu";
+import SideBarMenuFooter from "../components/SideBarMenuFooter";
 
 function sumVotes(partyData, lookup, convertInt) {
   return partyData.reduce((accumulator, currentValue) => {
@@ -39,6 +41,11 @@ export default function Page() {
     verdict: "Labour Majority of 10",
     verdictColor: "red",
   });
+  const [menuState, setMenuState] = useState(false);
+
+  const handleMenu = () => {
+    setMenuState(!menuState);
+  };
 
   const [conservativeData, setConservativeData] = useState({
     2019: 372,
@@ -307,8 +314,8 @@ export default function Page() {
       {/*Predictor Section*/}
       <section className="predictor-section content-with-sidebar">
         {/*Sidebar Section*/}
-        <div className="sidebar">
-          <SideBarHeader />
+        <div className={`sidebar ${menuState ? "menu-active" : ""}`}>
+          <SideBarHeader handleMenu={handleMenu}  />
           <div className="sidebar-main-container">
             <SideBarMainContent
               handlePollsTighten={handlePollsTighten}
@@ -318,6 +325,10 @@ export default function Page() {
               reformToggle={reformToggle}
             />
             <SideBarFooter />
+            <div className="open-menu-container">
+              <Menu />
+              <SideBarMenuFooter />
+            </div>
           </div>
         </div>
 

@@ -6,17 +6,64 @@ import { useState, useEffect } from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import Menu from "./components/Menu";
+import SideBarMenuFooter from "./components/SideBarMenuFooter";
 
 export default function Page() {
+  const [menuState, setMenuState] = useState(false);
+
+  const handleMenu = () => {
+    setMenuState(!menuState);
+  };
+
   return (
     <>
       <section className="landing-section">
-        <div className="menu-btn-container">
-          <button className="menu-burger transparent">
-            <img src="../Menu_Button_White.svg" alt="Menu Burger" />
-          </button>
-        </div>
+        <div
+          className={`sidebar landing-page ${menuState ? "menu-active" : ""}`}
+        >
+          <div className="menu-btn-container">
+            <button className="menu-burger transparent" onClick={handleMenu}>
+              <div className="menu-img activate-menu">
+                <img
+                  src="./Menu_Button_White.svg"
+                  alt="Menu Burger"
+                  className="menu-burger state1"
+                />
 
+                <img
+                  src="./Menu_Button_2.svg"
+                  alt="Menu Burger"
+                  className="menu-burger state2"
+                />
+              </div>
+
+              <div className="menu-img deactivate-menu">
+                <img
+                  src="./Menu_Close_Button_State_1.svg"
+                  alt="Menu Close"
+                  className="menu-close state1"
+                />
+
+                <img
+                  src="./Menu_Close_Button_State_2.svg"
+                  alt="Menu Close"
+                  className="menu-close state2"
+                />
+              </div>
+            </button>
+          </div>
+
+          <div className="header-title">
+            <h3>5654 ELECTION CENTRE</h3>
+          </div>
+          <div className="sidebar-main-container">
+            <div className="open-menu-container">
+              <Menu />
+              <SideBarMenuFooter />
+            </div>
+          </div>
+        </div>
         <img
           src="../5654_Type_Logo.svg"
           alt="Logo"
@@ -28,10 +75,10 @@ export default function Page() {
             <video
               src="../5654_Homepage_Video_Sample.mp4"
               className=""
-              muted=""
-              loop=""
-              autoplay=""
-              playsinline=""
+              muted={false}
+              loop={true}
+              autoPlay={true}
+              playsInline={true}
             ></video>
 
             <div className="overlay"></div>
