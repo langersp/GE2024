@@ -1160,7 +1160,7 @@ width:100%!important}
   transform:translateX(65px)!important;
 }
 
-.MuiButtonBase-root-MuiSwitch-switchBase .MuiSwitch-input {
+.MuiSwitch-input {
   left: -125%!important;
   width: 500%!important;
 }
