@@ -1153,5 +1153,16 @@ h4 {
 
 
 
+.css-kdc3n8-MuiStack-root {
+width:100%}
+.css-kdc3n8-MuiStack-root>:not(style)~:not(style) {margin-left: 0;}
+.css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase.Mui-checked {
+  transform:translateX(65px);
+}
 
+.css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase .MuiSwitch-input {
+  left: -125%;
+  width: 500%;
+}
+.css-ahj2mt-MuiTypography-root { font-size:1vw}
 

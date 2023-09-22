@@ -55,6 +55,9 @@ const GESwitch = ({ title, helperText, reformToggle, handleReformToggle }) => {
               msflexalign: "center",
               alignItems: "center",
               paddingTop: "1.5vw",
+              marginLeft:"0",
+              width: "calc(100% - 7vw)",
+              fontSize:"0.8vw"
             }}
           />
           <Typography
