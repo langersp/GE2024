@@ -43,7 +43,7 @@ export default function Page() {
             <div className="blog-tiles">
               <div className="blog-tile">
                 <div className="blog-img">
-                  <img src="../Background_Image.jpg" alt="Blog Image" />
+                  <img src="../blog1.jpeg" alt="Blog Image" />
                 </div>
 
                 <a href="https://www.5654.co.uk/our-perspective/is-a-labour-majority-inevitable" target="_blank" className="blog-link"></a>
@@ -58,7 +58,7 @@ export default function Page() {
 
               <div className="blog-tile">
                 <div className="blog-img">
-                  <img src="../Background_Image.jpg" alt="Blog Image" />
+                  <img src="../blog2.jpeg" alt="Blog Image" />
                 </div>
 
                 <a href="https://www.5654.co.uk/our-perspective/the-switchers-and-the-undecideds" target="_blank" className="blog-link"></a>
@@ -73,7 +73,7 @@ export default function Page() {
 
               <div className="blog-tile">
                 <div className="blog-img">
-                  <img src="../Background_Image.jpg" alt="Blog Image" />
+                  <img src="../blog3.jpeg" alt="Blog Image" />
                 </div>
 
                 <a href="https://www.5654.co.uk/our-perspective/think-tanks-that-matter" target="_blank" className="blog-link"></a>
