@@ -13,7 +13,7 @@ const SideBarMainContent = ({
     <div className="sidebar-main-content">
       <h2>THE NUMBER OF SEATS IN GREAT BRITAIN</h2>
 
-      {/* <p>Lorem ipsum ante aenean amet hac etiam felis non augue suscipit.</p> */}
+      <p>Use the choices below to make your prediction.</p>
 
       <div className="sliders">
         <GESlider
@@ -33,7 +33,7 @@ const SideBarMainContent = ({
         />
 
         <GESwitch
-          title="Whether Reform UK stand aside?"
+          title="Will Reform UK fail to compete with Conservative candidates?"
           helperText="Analysis from the 2017 and 2019 General elections found that where the Brexit Party stood candidates, the change in vote share was more strongly correlated with Labour’s vote share falling than other parties.  Previous analysis found, in  the absence of a Brexit Party candidate, 70% of those who switched from Labour to the Brexit Party would have instead backed the Conservatives, while just 30% would have stuck with Labour."
           reformToggle={reformToggle}
           handleReformToggle={handleReformToggle}

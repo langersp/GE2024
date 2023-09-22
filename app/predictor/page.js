@@ -501,15 +501,13 @@ export default function Page() {
             <VoteResult verdict={verdict} />
           </div>
 
-          {/* <!-- Seat Tracker Section --> */}
-          <div className="seat-tracker-section">
+          {/* {/* <div className="seat-tracker-section">
             <div className="seat-tracker-heading">
               <h2>
                 GENERAL ELECTION <span>SEAT TRACKER</span>
               </h2>
             </div>
 
-            {/* <!-- Seat Tracker Table Section --> */}
             <div className="data-table-section seat-tracker-data-section">
               <div className="data-table-headings seat-tracker-data-table-headings">
                 <div className="data-table-heading-col">
@@ -627,9 +625,9 @@ export default function Page() {
                 <div className="data-table-col">
                   <span>{otherData["reform"]}</span>
                 </div>
-              </div>
-            </div>
-          </div>
+              </div> 
+            </div> 
+  </div> */}
         </div>
       </section>
     </>

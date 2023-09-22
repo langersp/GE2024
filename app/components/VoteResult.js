@@ -5,7 +5,7 @@ const VoteResult = ({ verdict }) => {
     <div className={`data-table-result ${verdict.verdictColor}`}>
       <span>RESULT</span>
 
-      <img src="Star.svg" alt="Star" />
+      <img src="../Star.svg" alt="Star" />
 
       <span>{verdict.verdict}</span>
     </div>
