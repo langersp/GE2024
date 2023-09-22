@@ -1154,15 +1154,15 @@ h4 {
 
 
 .MuiStack-root {
-width:100%}
-.MuiStack-root>:not(style)~:not(style) {margin-left: 0;}
+width:100%!important}
+.MuiStack-root>:not(style)~:not(style) {margin-left: 0!important;}
 .MuiSwitch-switchBase.Mui-checked {
   transform:translateX(65px)!important;
 }
 
 .MuiButtonBase-root-MuiSwitch-switchBase .MuiSwitch-input {
-  left: -125%;
-  width: 500%;
+  left: -125%!important;
+  width: 500%!important;
 }
-.MuiTypography-root { font-size:1vw}
+.MuiTypography-root { font-size:1vw!important}
 
