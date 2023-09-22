@@ -511,6 +511,7 @@ h4 {
       -ms-flex-pack: center;
           justify-content: center;
   position: relative;
+  text-transform: uppercase;
 }
 .landing-section .blog-tiles-container {
   background: #060e31;
@@ -1048,7 +1049,6 @@ h4 {
   padding-right: 2.5vw;
   -webkit-box-pack: start !important;
       -ms-flex-pack: start !important;
-          justify-content: flex-start !important;
 }
 .sidebar .sidebar-main-container {
   position: relative;

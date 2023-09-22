@@ -381,25 +381,19 @@ export default function Page() {
 
               <div className="data-table-heading-col">
                 <span>
-                  2019 Notional
-                  <br />
-                  Results
+                  2019 Result
                 </span>
               </div>
 
               <div className="data-table-heading-col">
                 <span>
-                  Nowcast
-                  <br />
-                  (Current Polling Avg)
+                  Snapshot
                 </span>
               </div>
 
               <div className="data-table-heading-col">
                 <span>
-                  Potential 2024
-                  <br />
-                  Election Result
+                  Your prediction / Your result
                 </span>
               </div>
             </div>

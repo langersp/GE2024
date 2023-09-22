@@ -62,17 +62,13 @@ export default function Page() {
 
             <div className="quote">
               <blockquote>
-                &quot;The next general election is now firmly in sight. Current
-                polling suggests Labour are heading to victory - yet the
-                political arithmetic remains extraordinarily difficult for
-                Starmer. Since 2010, the UK has experienced four different
-                models of government: a coalition government; a government with
-                a small working majority; a minority government; and, since
-                2019, a government with a strong working majority. Sir Keir
-                Starmer is likely to be the UK’s next Prime Minister – managing
-                a Labour-led administration. But the evidence suggests the model
-                of government he will preside over – and the dynamics in
-                parliament – are harder to determine.&quot;
+                &quot;Since 2010, the UK has experienced four different models of government: a coalition government; a government with a small working majority; a minority government; and, since 2019, a government with a strong working majority.<br /><br />
+
+
+The next general election is now firmly in sight. Current polling suggests Labour are heading to victory - yet the political arithmetic remains extraordinarily difficult for Sir Keir Starmer.<br /><br />
+
+
+Starmer is likely to be the UK&rsquot;s next Prime Minister &ndash; managing a Labour-led administration. But the evidence suggests the model of government he will preside over &ndash; and the dynamics in parliament &ndash; are harder to determine.&quot;
               </blockquote>
 
               <span className="author">Ben Thornton - Founding Partner</span>
