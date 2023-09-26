@@ -49,9 +49,9 @@ export default function Page() {
                 <a href="https://www.5654.co.uk/our-perspective/is-a-labour-majority-inevitable" target="_blank" className="blog-link"></a>
 
                 <div className="blog-excerpt">
+                  <h3>Is a Labour Majority Inevitable?</h3>
                   <p>
-                    Lorem ipsum ante aenean amet hac etiam felis non augue
-                    suscipit tristique, condimentum dui.
+                  At exactly 10pm on General Election night 2019, the BBC, ITV and Sky published their shared Exit poll revealing that Boris Johnson... 
                   </p>
                 </div>
               </div>
@@ -64,9 +64,9 @@ export default function Page() {
                 <a href="https://www.5654.co.uk/our-perspective/the-switchers-and-the-undecideds" target="_blank" className="blog-link"></a>
 
                 <div className="blog-excerpt">
+                  <h3>The Switchers and the Undecideds</h3>
                   <p>
-                    Lorem ipsum ante aenean amet hac etiam felis non augue
-                    suscipit tristique, condimentum dui.
+                  With the national polls indicating a Labour resurgence, 5654 & Company wanted to understand the extent to which voters are switching...
                   </p>
                 </div>
               </div>
@@ -79,10 +79,9 @@ export default function Page() {
                 <a href="https://www.5654.co.uk/our-perspective/think-tanks-that-matter" target="_blank" className="blog-link"></a>
 
                 <div className="blog-excerpt">
+                  <h3>What Businesses Should be Doing Now: Think Tanks That Matter</h3>
                   <p>
-                    Lorem ipsum ante aenean amet hac etiam felis non augue
-                    suscipit tristique, condimentum dui.
-                  </p>
+                  They are the policy engine for the main parties. There is often a cross-transfer of people - policy strategists may leave think-tanks...                  </p>
                 </div>
               </div>
             </div>
