@@ -376,7 +376,7 @@ export default function Page() {
           {/*Data Table Section*/}
           <div className="data-table-section" id="predictor-anchor">
             <div className="data-table-headings">
-              <div className="data-table-heading-col">
+              <div className="data-table-heading-col main-heading">
                 <h3>
                   NUMBER OF SEATS
                   <br />
@@ -384,16 +384,77 @@ export default function Page() {
                 </h3>
               </div>
 
-              <div className="data-table-heading-col">
-                <span>2019 Result</span>
+              <div className="mobile-only party-colour-code">
+                <div className="col">
+                  <div className="blue">Conservative</div>
+
+                  <div className="red">Labour</div>
+
+                  <div className="orange">Liberal Democrat</div>
+
+                  <div className="cyan">Reform UK</div>
+                </div>
+
+                <div className="col">
+                  <div className="lightgreen">Green</div>
+
+                  <div className="yellow">SNP</div>
+
+                  <div className="darkgreen">Plaid Cymru</div>
+
+                  <div className="grey">Other</div>
+                </div>
               </div>
 
               <div className="data-table-heading-col">
-                <span>Snapshot</span>
+                <a href="#!" className="help-icon">
+                  <div className="help-text">
+                    <p>
+                      Lorem ipsum ante aenean amet hac etiam felis non augue
+                      suscipit tristique, condimentum.
+                    </p>
+                  </div>
+                </a>
+
+                <span>
+                  2019 National
+                  <br />
+                  Results
+                </span>
               </div>
 
               <div className="data-table-heading-col">
-                <span>Your prediction / Your result</span>
+                <a href="#!" className="help-icon">
+                  <div className="help-text">
+                    <p>
+                      Lorem ipsum ante aenean amet hac etiam felis non augue
+                      suscipit tristique, condimentum.
+                    </p>
+                  </div>
+                </a>
+
+                <span>
+                  Nowcast
+                  <br />
+                  (Current Polling Avg)
+                </span>
+              </div>
+
+              <div className="data-table-heading-col">
+                <a href="#!" className="help-icon">
+                  <div className="help-text">
+                    <p>
+                      Lorem ipsum ante aenean amet hac etiam felis non augue
+                      suscipit tristique, condimentum.
+                    </p>
+                  </div>
+                </a>
+
+                <span>
+                  Potential 2024
+                  <br />
+                  Election Result
+                </span>
               </div>
             </div>
             <div className="data-table-row blue">
@@ -511,6 +572,245 @@ export default function Page() {
 
             <VoteResult verdict={verdict} />
           </div>
+
+        <div className="seat-tracker-section">
+        
+        <div className="seat-tracker-heading">
+              <h2>
+                GENERAL ELECTION <span>SEAT TRACKER</span>
+              </h2>
+            </div>
+            <div className="data-table-section seat-tracker-data-section">
+
+            <div className="data-table-headings seat-tracker-data-table-headings">
+                <div className="data-table-heading-col">
+                  <span>Number Of Seats</span>
+                </div>
+              </div>
+
+
+              <div className="seat-tracker-results">
+
+<div className="results red">
+
+    <div className="result-number">
+        <span>370</span>
+    </div>
+
+</div>
+
+<div className="results blue">
+
+    <div className="result-number">
+        <span>210</span>
+    </div>
+
+</div>
+
+<div className="results orange">
+
+    <div className="result-number">
+        <span>29</span>
+    </div>
+
+</div>
+
+<div className="results cyan">
+
+    <div className="result-number">
+        
+    </div>
+
+</div>
+
+<div className="results lightgreen">
+
+    <div className="result-number">
+        
+    </div>
+
+</div>
+
+<div className="results yellow">
+
+    <div className="result-number">
+        
+    </div>
+
+</div>
+
+<div className="results darkgreen">
+
+    <div className="result-number">
+        
+    </div>
+
+</div>
+
+<div className="results grey">
+
+    <div className="result-number">
+        
+    </div>
+
+</div>
+
+</div>
+
+                <div className="seat-tracker-data-container">
+
+                <div className="col">
+
+<div className="data-table-row blue seat-tracker-data-table-row">
+
+    <div className="data-table-col">
+    
+        <span>Conservative</span>
+    
+    </div>
+
+    <div className="data-table-col">
+    
+        <span>210</span>
+    
+    </div>
+
+</div>
+
+
+
+<div className="data-table-row red seat-tracker-data-table-row">
+
+    <div className="data-table-col">
+    
+        <span>Labour</span>
+    
+    </div>
+
+    <div className="data-table-col">
+    
+        <span>370</span>
+    
+    </div>
+
+</div>
+
+
+
+<div className="data-table-row orange seat-tracker-data-table-row">
+
+    <div className="data-table-col">
+    
+        <span>Liberal Democrat</span>
+    
+    </div>
+
+    <div className="data-table-col">
+    
+        <span>29</span>
+    
+    </div>
+
+</div>
+
+
+
+<div className="data-table-row cyan seat-tracker-data-table-row">
+
+    <div className="data-table-col">
+    
+        <span>Reform UK</span>
+    
+    </div>
+
+    <div className="data-table-col">
+    
+        <span>0</span>
+    
+    </div>
+
+</div>
+
+</div>
+
+
+
+<div className="col">
+
+<div className="data-table-row lightgreen seat-tracker-data-table-row">
+
+    <div className="data-table-col">
+    
+        <span>Green</span>
+    
+    </div>
+
+    <div className="data-table-col">
+    
+        <span>1</span>
+    
+    </div>
+
+</div>
+
+
+
+<div className="data-table-row yellow seat-tracker-data-table-row">
+
+    <div className="data-table-col">
+    
+        <span>SNP</span>
+    
+    </div>
+
+    <div className="data-table-col">
+    
+        <span>17</span>
+    
+    </div>
+
+</div>
+
+
+
+<div className="data-table-row darkgreen seat-tracker-data-table-row">
+
+    <div className="data-table-col">
+    
+        <span>Plaid Cymru</span>
+    
+    </div>
+
+    <div className="data-table-col">
+    
+        <span>3</span>
+    
+    </div>
+
+</div>
+
+
+
+<div className="data-table-row grey seat-tracker-data-table-row">
+
+    <div className="data-table-col">
+    
+        <span>Other</span>
+    
+    </div>
+
+    <div className="data-table-col">
+    
+        <span>2</span>
+    
+    </div>
+
+</div>
+
+</div>
+                </div>
+
+            </div></div>
 
           {/* {/* <div className="seat-tracker-section">
             <div className="seat-tracker-heading">

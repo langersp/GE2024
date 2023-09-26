@@ -1263,10 +1263,36 @@ width:100%!important}
   }
   .sidebar .open-menu-container {
     width: 100%;
+    position: static;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    min-height: calc(100vh - 22vw);
   }
   .sidebar .open-menu-container .sidebar-main-content {
     display: block;
     padding: 12vw;
+  }
+  .sidebar .open-menu-container .sidebar-footer {
+    position: static;
+    display: block;
+    padding: 0 12vw 23vw 12vw;
+  }
+  .sidebar .open-menu-container .sidebar-footer .links {
+    margin-bottom: 10vw;
+  }
+  .sidebar .open-menu-container .sidebar-footer img {
+    width: 12vw;
+  }
+  .sidebar .open-menu-container .sidebar-footer .colour-strip {
+    width: 100%;
   }
   .sidebar.menu-active {
     width: 100%;
@@ -1455,7 +1481,21 @@ width:100%!important}
     padding: 12vw 12vw 36vw 12vw;
   }
   .about-section .quote {
-    display: none;
+    padding-right: 0;
+    padding-top: 8vw;
+  }
+  .about-section .quote::before {
+    width: 8vw;
+    height: 0.5vw;
+  }
+  .about-section blockquote {
+    font-size: 3.5vw;
+    line-height: 4vw;
+    margin-bottom: 4vw;
+  }
+  .about-section .author {
+    font-size: 3.5vw;
+    line-height: 4vw;
   }
   .about-section .round-button {
     width: 25vw;
