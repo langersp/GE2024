@@ -19,7 +19,7 @@ export default function Page() {
   return (
     <>
       <section className="about-section content-with-sidebar">
-        <div className={`sidebar ${menuState ? 'menu-active' : ''}`}>
+        <div className={`sidebar ${menuState ? "menu-active" : ""}`}>
           <SideBarHeader handleMenu={handleMenu} />
           <div className="sidebar-main-container">
             <div className="sidebar-main-content">
@@ -37,6 +37,10 @@ export default function Page() {
               <SideBarMenuFooter />
             </div>
           </div>
+        </div>
+
+        <div className="header-section mobile-only">
+          <SideBarHeader handleMenu={handleMenu} />
         </div>
 
         <div className="main-content">
@@ -62,13 +66,23 @@ export default function Page() {
 
             <div className="quote">
               <blockquote>
-                &quot;Since 2010, the UK has experienced four different models of government: a coalition government; a government with a small working majority; a minority government; and, since 2019, a government with a strong working majority.<br /><br />
-
-
-The next general election is now firmly in sight. Current polling suggests Labour are heading to victory - yet the political arithmetic remains extraordinarily difficult for Sir Keir Starmer.<br /><br />
-
-
-Starmer is likely to be the UK&rsquo;s next Prime Minister &ndash; managing a Labour-led administration. But the evidence suggests the model of government he will preside over &ndash; and the dynamics in parliament &ndash; are harder to determine.&quot;
+                &quot;Since 2010, the UK has experienced four different models
+                of government: a coalition government; a government with a small
+                working majority; a minority government; and, since 2019, a
+                government with a strong working majority.
+                <br />
+                <br />
+                The next general election is now firmly in sight. Current
+                polling suggests Labour are heading to victory - yet the
+                political arithmetic remains extraordinarily difficult for Sir
+                Keir Starmer.
+                <br />
+                <br />
+                Starmer is likely to be the UK&rsquo;s next Prime Minister
+                &ndash; managing a Labour-led administration. But the evidence
+                suggests the model of government he will preside over &ndash;
+                and the dynamics in parliament &ndash; are harder to
+                determine.&quot;
               </blockquote>
 
               <span className="author">Ben Thornton - Founding Partner</span>
@@ -80,6 +94,10 @@ Starmer is likely to be the UK&rsquo;s next Prime Minister &ndash; managing a La
           <div className="about-img-container">
             <img src="../People_Image_2.jpg" alt="About Image" />
           </div>
+        </div>
+
+        <div className="footer-section mobile-only">
+          <SideBarFooter />
         </div>
       </section>
     </>

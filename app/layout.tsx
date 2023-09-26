@@ -1,5 +1,6 @@
 import './globals.css'
 import './style.css'
+import './style-mobile.css'
 import './use.typekit.net_oty8kzu.css'
 
 import type { Metadata } from 'next'

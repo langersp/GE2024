@@ -70,6 +70,40 @@ export default function Page() {
           className="logo-top-right"
         />
 
+        <div className="header-section mobile-only landing-page">
+          <div className="sidebar-header">
+            <button className="menu-burger transparent" onClick={handleMenu}>
+              <div className="menu-img activate-menu">
+                <img
+                  src="./Menu_Button_White.svg"
+                  alt="Menu Burger"
+                  className="menu-burger state1"
+                />
+
+                <img
+                  src="./Menu_Button_2.svg"
+                  alt="Menu Burger"
+                  className="menu-burger state2"
+                />
+              </div>
+
+              <div className="menu-img deactivate-menu">
+                <img
+                  src="./Menu_Close_Button_State_1.svg"
+                  alt="Menu Close"
+                  className="menu-close state1"
+                />
+
+                <img
+                  src="./Menu_Close_Button_State_2.svg"
+                  alt="Menu Close"
+                  className="menu-close state2"
+                />
+              </div>
+            </button>
+          </div>
+        </div>
+
         <div className="main-img-container">
           <div className="vid-container">
             <video
@@ -97,7 +131,7 @@ export default function Page() {
 
           <div className="landing-btn">
             <a href="/predictor" className="btn red">
-             Make Your Prediction
+              Make Your Prediction
             </a>
           </div>
         </div>
@@ -109,7 +143,11 @@ export default function Page() {
                 <img src="../blog1.jpeg" alt="Blog Image" />
               </div>
 
-              <a href="https://www.5654.co.uk/our-perspective/is-a-labour-majority-inevitable" target="_blank" className="blog-link"></a>
+              <a
+                href="https://www.5654.co.uk/our-perspective/is-a-labour-majority-inevitable"
+                target="_blank"
+                className="blog-link"
+              ></a>
 
               <div className="blog-excerpt">
                 <p>
@@ -124,7 +162,11 @@ export default function Page() {
                 <img src="../blog2.jpeg" alt="Blog Image" />
               </div>
 
-              <a href="https://www.5654.co.uk/our-perspective/the-switchers-and-the-undecideds" target="_blank" className="blog-link"></a>
+              <a
+                href="https://www.5654.co.uk/our-perspective/the-switchers-and-the-undecideds"
+                target="_blank"
+                className="blog-link"
+              ></a>
 
               <div className="blog-excerpt">
                 <p>
@@ -139,7 +181,11 @@ export default function Page() {
                 <img src="../blog3.jpeg" alt="Blog Image" />
               </div>
 
-              <a href="https://www.5654.co.uk/our-perspective/think-tanks-that-matter" target="_blank" className="blog-link"></a>
+              <a
+                href="https://www.5654.co.uk/our-perspective/think-tanks-that-matter"
+                target="_blank"
+                className="blog-link"
+              ></a>
 
               <div className="blog-excerpt">
                 <p>
