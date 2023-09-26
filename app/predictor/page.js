@@ -335,6 +335,7 @@ export default function Page() {
             </div>
             <div className="open-menu-container">
               <Menu />
+              <SideBarMenuFooter />
             </div>
           </div>
         </div>

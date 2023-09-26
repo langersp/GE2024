@@ -68,13 +68,13 @@ export default function Page() {
 The next general election is now firmly in sight. Current polling suggests Labour are heading to victory - yet the political arithmetic remains extraordinarily difficult for Sir Keir Starmer.<br /><br />
 
 
-Starmer is likely to be the UK&rsquot;s next Prime Minister &ndash; managing a Labour-led administration. But the evidence suggests the model of government he will preside over &ndash; and the dynamics in parliament &ndash; are harder to determine.&quot;
+Starmer is likely to be the UK's next Prime Minister &ndash; managing a Labour-led administration. But the evidence suggests the model of government he will preside over &ndash; and the dynamics in parliament &ndash; are harder to determine.&quot;
               </blockquote>
 
               <span className="author">Ben Thornton - Founding Partner</span>
             </div>
           </div>
-          <a href="#" className="round-button">
+          <a href="/predictor" className="round-button">
             VIEW THE NUMBER OF SEATS IN BRITAIN
           </a>
           <div className="about-img-container">
