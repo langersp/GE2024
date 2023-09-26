@@ -105,7 +105,7 @@ export default function Page() {
                   <p>
                     They are the policy engine for the main parties. There is
                     often a cross-transfer of people - policy strategists may
-                    leave think-tanks...{" "}
+                    leave think-tanks...
                   </p>
                 </div>
               </div>
