@@ -13,6 +13,7 @@ import SideBarFooter from "../components/SideBarFooter";
 import VoteResult from "../components/VoteResult";
 import Menu from "../components/Menu";
 import SideBarMenuFooter from "../components/SideBarMenuFooter";
+import SlidersMobile from "../components/SlidersMobile";
 
 function sumVotes(partyData, lookup, convertInt) {
   return partyData.reduce((accumulator, currentValue) => {
@@ -340,7 +341,10 @@ export default function Page() {
           </div>
         </div>
 
-        {/* Main Content */}
+        <div className="header-section mobile-only">
+          <SideBarHeader handleMenu={handleMenu} />
+        </div>
+
         <div className="main-content">
           <div className="intro-section">
             <div className="icon">
@@ -381,21 +385,15 @@ export default function Page() {
               </div>
 
               <div className="data-table-heading-col">
-                <span>
-                  2019 Result
-                </span>
+                <span>2019 Result</span>
               </div>
 
               <div className="data-table-heading-col">
-                <span>
-                  Snapshot
-                </span>
+                <span>Snapshot</span>
               </div>
 
               <div className="data-table-heading-col">
-                <span>
-                  Your prediction / Your result
-                </span>
+                <span>Your prediction / Your result</span>
               </div>
             </div>
             <div className="data-table-row blue">
@@ -641,6 +639,39 @@ export default function Page() {
               </div> 
             </div> 
   </div> */}
+        </div>
+        <div className="footer-section mobile-only">
+          <SideBarFooter />
+        </div>
+        <div className="mobile-footer-sliders mobile-only">
+          <button className="footer-sliders-btn">
+            <img
+              src="../Slider_Icon.svg"
+              alt="Settings Icon"
+              className="settings-icon"
+            />
+
+            <span>MAKE YOUR PREDICTION</span>
+
+            <img
+              src="../Plus.svg"
+              alt="Plus Icon"
+              className="plus-minus plus"
+            />
+
+            <img
+              src="../Minus.svg"
+              alt="Minus Icon"
+              className="plus-minus minus"
+            />
+          </button>
+          <SlidersMobile
+            handlePollsTighten={handlePollsTighten}
+            handlePollSliderChange={handlePollSliderChange}
+            handleAntiTorySliderChange={handleAntiTorySliderChange}
+            handleReformToggle={handleReformToggle}
+            reformToggle={reformToggle}
+          />
         </div>
       </section>
     </>
