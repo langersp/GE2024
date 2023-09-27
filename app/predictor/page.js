@@ -233,7 +233,6 @@ export default function Page() {
       let AW2 = I2 === U2 ? Y2 : I2;
 
       let AX2 = J2 === U2 ? Y2 : J2;
-      //let AY2 = 0;
       let AY2 = rawData[10]["other"][i];
       AY2 = parseFloat(AY2);
 
@@ -315,14 +314,6 @@ export default function Page() {
       { name: "pc", color: "darkgreen", prediction: pcSum },
       { name: "other", color: "grey", prediction: otherSum },
     ];
-    predictionDataSorted.sort((a, b) => {
-      if (a.prediction > b.prediction) {
-        return -1;
-      } else if (a.prediction < b.prediction) {
-        return 1;
-      }
-      return 0;
-    });
 
     setPredictionData(predictionDataSorted);
 
@@ -649,19 +640,28 @@ export default function Page() {
               </div>
 
               <div className="seat-tracker-results">
-                {predictionData.map((party, i) => {
-                  return (
-                    <div
-                      className={`results ${party.color}`}
-                      style={{ width: `${(party.prediction / 632) * 100}%` }}
-                      key={party.name}
-                    >
-                      <div className="result-number">
-                        {i < 3 && <span>{party.prediction}</span>}
+                {predictionData
+                  .sort((a, b) => {
+                    if (a.prediction > b.prediction) {
+                      return -1;
+                    } else if (a.prediction < b.prediction) {
+                      return 1;
+                    }
+                    return 0;
+                  })
+                  .map((party, i) => {
+                    return (
+                      <div
+                        className={`results ${party.color}`}
+                        style={{ width: `${(party.prediction / 632) * 100}%` }}
+                        key={party.name}
+                      >
+                        <div className="result-number">
+                          {i < 3 && <span>{party.prediction}</span>}
+                        </div>
                       </div>
-                    </div>
-                  );
-                })}
+                    );
+                  })}
               </div>
 
               <div className="seat-tracker-data-container">
