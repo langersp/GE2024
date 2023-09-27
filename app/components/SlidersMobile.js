@@ -10,8 +10,8 @@ const SideBarMainContent = ({
   handleReformToggle,
 }) => {
   return (
-    <div class="sidebar-main-content">
-      <div class="sliders">
+    <div className="sidebar-main-content">
+      <div className="sliders">
         <GESlider
           title="How much the polls will tighten?"
           helperText="Historically, the polls have tightened in the run-up to general elections, as undecided voters make up their minds. This happened to the Conservatives in 1997 (after 18 years in power) and Labour in 2010 (after 13 years in power). In both cases, the Government closed the Opposition’s lead by 8 to 10 percentage points in the final year."

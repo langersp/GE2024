@@ -43,9 +43,14 @@ export default function Page() {
     verdictColor: "red",
   });
   const [menuState, setMenuState] = useState(false);
+  const [footerSliderState, setFooterSliderState] = useState(false);
 
   const handleMenu = () => {
     setMenuState(!menuState);
+  };
+
+  const handleFooterSlider = () => {
+    setFooterSliderState(!footerSliderState);
   };
 
   const [conservativeData, setConservativeData] = useState({
@@ -210,9 +215,6 @@ export default function Page() {
       otherSum += BG2;
     }
 
-    //weird bug
-    //if(pollSliderPercentage > 7 && pollSliderPercentage < 64) {conservativeSum -= 1;}
-
     setConservativeData((values) => ({
       ...values,
       reform: conservativeSum,
@@ -271,8 +273,6 @@ export default function Page() {
     }
 
     setVerdict({ verdict: verdict, verdictColor: verdictColor });
-
-    console.log(verdict);
   };
 
   useEffect(() => {
@@ -312,9 +312,7 @@ export default function Page() {
 
   return (
     <>
-      {/*Predictor Section*/}
       <section className="predictor-section content-with-sidebar">
-        {/*Sidebar Section*/}
         <div className={`sidebar ${menuState ? "menu-active" : ""}`}>
           <SideBarHeader handleMenu={handleMenu} />
           <div className="sidebar-main-container">
@@ -373,7 +371,6 @@ export default function Page() {
             </div>
           </div>
 
-          {/*Data Table Section*/}
           <div className="data-table-section" id="predictor-anchor">
             <div className="data-table-headings">
               <div className="data-table-heading-col main-heading">
@@ -569,256 +566,15 @@ export default function Page() {
                 <span>{otherData["reform"]}</span>
               </div>
             </div>
-
             <VoteResult verdict={verdict} />
           </div>
 
-        <div className="seat-tracker-section">
-        
-        <div className="seat-tracker-heading">
-              <h2>
-                GENERAL ELECTION <span>SEAT TRACKER</span>
-              </h2>
-            </div>
-            <div className="data-table-section seat-tracker-data-section">
-
-            <div className="data-table-headings seat-tracker-data-table-headings">
-                <div className="data-table-heading-col">
-                  <span>Number Of Seats</span>
-                </div>
-              </div>
-
-
-              <div className="seat-tracker-results">
-
-<div className="results red">
-
-    <div className="result-number">
-        <span>370</span>
-    </div>
-
-</div>
-
-<div className="results blue">
-
-    <div className="result-number">
-        <span>210</span>
-    </div>
-
-</div>
-
-<div className="results orange">
-
-    <div className="result-number">
-        <span>29</span>
-    </div>
-
-</div>
-
-<div className="results cyan">
-
-    <div className="result-number">
-        
-    </div>
-
-</div>
-
-<div className="results lightgreen">
-
-    <div className="result-number">
-        
-    </div>
-
-</div>
-
-<div className="results yellow">
-
-    <div className="result-number">
-        
-    </div>
-
-</div>
-
-<div className="results darkgreen">
-
-    <div className="result-number">
-        
-    </div>
-
-</div>
-
-<div className="results grey">
-
-    <div className="result-number">
-        
-    </div>
-
-</div>
-
-</div>
-
-                <div className="seat-tracker-data-container">
-
-                <div className="col">
-
-<div className="data-table-row blue seat-tracker-data-table-row">
-
-    <div className="data-table-col">
-    
-        <span>Conservative</span>
-    
-    </div>
-
-    <div className="data-table-col">
-    
-        <span>210</span>
-    
-    </div>
-
-</div>
-
-
-
-<div className="data-table-row red seat-tracker-data-table-row">
-
-    <div className="data-table-col">
-    
-        <span>Labour</span>
-    
-    </div>
-
-    <div className="data-table-col">
-    
-        <span>370</span>
-    
-    </div>
-
-</div>
-
-
-
-<div className="data-table-row orange seat-tracker-data-table-row">
-
-    <div className="data-table-col">
-    
-        <span>Liberal Democrat</span>
-    
-    </div>
-
-    <div className="data-table-col">
-    
-        <span>29</span>
-    
-    </div>
-
-</div>
-
-
-
-<div className="data-table-row cyan seat-tracker-data-table-row">
-
-    <div className="data-table-col">
-    
-        <span>Reform UK</span>
-    
-    </div>
-
-    <div className="data-table-col">
-    
-        <span>0</span>
-    
-    </div>
-
-</div>
-
-</div>
-
-
-
-<div className="col">
-
-<div className="data-table-row lightgreen seat-tracker-data-table-row">
-
-    <div className="data-table-col">
-    
-        <span>Green</span>
-    
-    </div>
-
-    <div className="data-table-col">
-    
-        <span>1</span>
-    
-    </div>
-
-</div>
-
-
-
-<div className="data-table-row yellow seat-tracker-data-table-row">
-
-    <div className="data-table-col">
-    
-        <span>SNP</span>
-    
-    </div>
-
-    <div className="data-table-col">
-    
-        <span>17</span>
-    
-    </div>
-
-</div>
-
-
-
-<div className="data-table-row darkgreen seat-tracker-data-table-row">
-
-    <div className="data-table-col">
-    
-        <span>Plaid Cymru</span>
-    
-    </div>
-
-    <div className="data-table-col">
-    
-        <span>3</span>
-    
-    </div>
-
-</div>
-
-
-
-<div className="data-table-row grey seat-tracker-data-table-row">
-
-    <div className="data-table-col">
-    
-        <span>Other</span>
-    
-    </div>
-
-    <div className="data-table-col">
-    
-        <span>2</span>
-    
-    </div>
-
-</div>
-
-</div>
-                </div>
-
-            </div></div>
-
-          {/* {/* <div className="seat-tracker-section">
+          <div className="seat-tracker-section">
             <div className="seat-tracker-heading">
               <h2>
                 GENERAL ELECTION <span>SEAT TRACKER</span>
               </h2>
             </div>
-
             <div className="data-table-section seat-tracker-data-section">
               <div className="data-table-headings seat-tracker-data-table-headings">
                 <div className="data-table-heading-col">
@@ -826,124 +582,138 @@ export default function Page() {
                 </div>
               </div>
 
-              <div className="data-table-row blue seat-tracker-data-table-row">
-                <div className="data-table-col">
-                  <span>Conservative</span>
+              <div className="seat-tracker-results">
+                <div className="results red">
+                  <div className="result-number">
+                    <span>{labourData["reform"]}</span>
+                  </div>
                 </div>
 
-                <div className="data-table-col result-bar">
-                  <span style={{width: `${conservativeData["reform"]/632 * 100}%`}}></span>
+                <div className="results blue">
+                  <div className="result-number">
+                    <span>{conservativeData["reform"]}</span>
+                  </div>
                 </div>
 
-                <div className="data-table-col">
-                  <span>{conservativeData["reform"]}</span>
+                <div className="results orange">
+                  <div className="result-number">
+                    <span>{liberalData["reform"]}</span>
+                  </div>
+                </div>
+
+                <div className="results cyan">
+                  <div className="result-number">{reformData["reform"]}</div>
+                </div>
+
+                <div className="results lightgreen">
+                  <div className="result-number">{greenData["reform"]}</div>
+                </div>
+
+                <div className="results yellow">
+                  <div className="result-number">{snpData["reform"]}</div>
+                </div>
+
+                <div className="results darkgreen">
+                  <div className="result-number">{pcData["reform"]}</div>
+                </div>
+
+                <div className="results grey">
+                  <div className="result-number">{otherData["reform"]}</div>
                 </div>
               </div>
 
-              <div className="data-table-row red seat-tracker-data-table-row">
-                <div className="data-table-col">
-                  <span>Labour</span>
+              <div className="seat-tracker-data-container">
+                <div className="col">
+                  <div className="data-table-row blue seat-tracker-data-table-row">
+                    <div className="data-table-col">
+                      <span>Conservative</span>
+                    </div>
+
+                    <div className="data-table-col">
+                      <span>{conservativeData["reform"]}</span>
+                    </div>
+                  </div>
+                  <div className="data-table-row red seat-tracker-data-table-row">
+                    <div className="data-table-col">
+                      <span>Labour</span>
+                    </div>
+
+                    <div className="data-table-col">
+                      <span>{labourData["reform"]}</span>
+                    </div>
+                  </div>
+                  <div className="data-table-row orange seat-tracker-data-table-row">
+                    <div className="data-table-col">
+                      <span>Liberal Democrat</span>
+                    </div>
+
+                    <div className="data-table-col">
+                      <span>{liberalData["reform"]}</span>
+                    </div>
+                  </div>
+                  <div className="data-table-row cyan seat-tracker-data-table-row">
+                    <div className="data-table-col">
+                      <span>Reform UK</span>
+                    </div>
+
+                    <div className="data-table-col">
+                      <span>{reformData["reform"]}</span>
+                    </div>
+                  </div>
                 </div>
 
-                <div className="data-table-col result-bar">
-                  <span style={{width: `${labourData["reform"]/632 * 100}%`}}></span>
-                </div>
+                <div className="col">
+                  <div className="data-table-row lightgreen seat-tracker-data-table-row">
+                    <div className="data-table-col">
+                      <span>Green</span>
+                    </div>
 
-                <div className="data-table-col">
-                  <span>{labourData["reform"]}</span>
+                    <div className="data-table-col">
+                      <span>{greenData["reform"]}</span>
+                    </div>
+                  </div>
+
+                  <div className="data-table-row yellow seat-tracker-data-table-row">
+                    <div className="data-table-col">
+                      <span>SNP</span>
+                    </div>
+
+                    <div className="data-table-col">
+                      <span>{snpData["reform"]}</span>
+                    </div>
+                  </div>
+
+                  <div className="data-table-row darkgreen seat-tracker-data-table-row">
+                    <div className="data-table-col">
+                      <span>Plaid Cymru</span>
+                    </div>
+
+                    <div className="data-table-col">
+                      <span>{pcData["reform"]}</span>
+                    </div>
+                  </div>
+
+                  <div className="data-table-row grey seat-tracker-data-table-row">
+                    <div className="data-table-col">
+                      <span>Other</span>
+                    </div>
+
+                    <div className="data-table-col">
+                      <span>{otherData["reform"]}</span>
+                    </div>
+                  </div>
                 </div>
               </div>
-
-              <div className="data-table-row orange seat-tracker-data-table-row">
-                <div className="data-table-col">
-                  <span>Liberal Democrat</span>
-                </div>
-
-                <div className="data-table-col result-bar">
-                  <span style={{width: `${liberalData["reform"]/632 * 100}%`}}></span>
-                </div>
-
-                <div className="data-table-col">
-                  <span>{liberalData["reform"]}</span>
-                </div>
-              </div>
-
-              <div className="data-table-row cyan seat-tracker-data-table-row">
-                <div className="data-table-col">
-                  <span>Reform UK</span>
-                </div>
-
-                <div className="data-table-col result-bar">
-                  <span style={{width: `${reformData["reform"]/632 * 100}%`}}></span>
-                </div>
-
-                <div className="data-table-col">
-                  <span>{reformData["reform"]}</span>
-                </div>
-              </div>
-
-              <div className="data-table-row lightgreen seat-tracker-data-table-row">
-                <div className="data-table-col">
-                  <span>Green</span>
-                </div>
-
-                <div className="data-table-col result-bar">
-                  <span style={{width: `${greenData["reform"]/632 * 100}%`}}></span>
-                </div>
-
-                <div className="data-table-col">
-                  <span>{greenData["reform"]}</span>
-                </div>
-              </div>
-
-              <div className="data-table-row yellow seat-tracker-data-table-row">
-                <div className="data-table-col">
-                  <span>SNP</span>
-                </div>
-
-                <div className="data-table-col result-bar">
-                  <span style={{width: `${snpData["reform"]/632 * 100}%`}}></span>
-                </div>
-
-                <div className="data-table-col">
-                  <span>{snpData["reform"]}</span>
-                </div>
-              </div>
-
-              <div className="data-table-row darkgreen seat-tracker-data-table-row">
-                <div className="data-table-col">
-                  <span>Plaid Cymru</span>
-                </div>
-
-                <div className="data-table-col result-bar">
-                  <span style={{width: `${pcData["reform"]/632 * 100}%`}}></span>
-                </div>
-
-                <div className="data-table-col">
-                  <span>{pcData["reform"]}</span>
-                </div>
-              </div>
-
-              <div className="data-table-row grey seat-tracker-data-table-row">
-                <div className="data-table-col">
-                  <span>Other</span>
-                </div>
-
-                <div className="data-table-col result-bar">
-                  <span style={{width: `${otherData["reform"]/632 * 100}%`}}></span>
-                </div>
-
-                <div className="data-table-col">
-                  <span>{otherData["reform"]}</span>
-                </div>
-              </div> 
-            </div> 
-  </div> */}
+            </div>
+          </div>
         </div>
         <div className="footer-section mobile-only">
           <SideBarFooter />
         </div>
-        <div className="mobile-footer-sliders mobile-only">
+        <div
+          className={`mobile-footer-sliders mobile-only ${footerSliderState ? "active" : ""}`}
+          onClick={handleFooterSlider}
+        >
           <button className="footer-sliders-btn">
             <img
               src="../Slider_Icon.svg"
