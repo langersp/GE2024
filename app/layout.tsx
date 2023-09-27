@@ -5,8 +5,8 @@ import './use.typekit.net_oty8kzu.css'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'GE2024',
-  description: 'GE2024',
+  title: '5654 Election Centre',
+  description: '5654 Election Centre',
 }
 
 export default function RootLayout({
