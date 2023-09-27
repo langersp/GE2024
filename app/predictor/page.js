@@ -583,41 +583,66 @@ export default function Page() {
               </div>
 
               <div className="seat-tracker-results">
-                <div className="results red" style={{width: `${labourData["reform"]/632 * 100}%`}}>
+                <div
+                  className="results blue"
+                  style={{
+                    width: `${(conservativeData["reform"] / 632) * 100}%`,
+                  }}
+                >
+                  <div className="result-number">
+                    <span>{conservativeData["reform"]}</span>
+                  </div>
+                </div>
+                <div
+                  className="results red"
+                  style={{ width: `${(labourData["reform"] / 632) * 100}%` }}
+                >
                   <div className="result-number">
                     <span>{labourData["reform"]}</span>
                   </div>
                 </div>
 
-                <div className="results blue" style={{width: `${conservativeData["reform"]/632 * 100}%`}}>
-                  <div className="result-number">
-                    <span>{conservativeData["reform"]}</span>
-                  </div>
-                </div>
-
-                <div className="results orange" style={{width: `${liberalData["reform"]/632 * 100}%`}}>
+                <div
+                  className="results orange"
+                  style={{ width: `${(liberalData["reform"] / 632) * 100}%` }}
+                >
                   <div className="result-number">
                     <span>{liberalData["reform"]}</span>
                   </div>
                 </div>
 
-                <div className="results cyan" style={{width: `${reformData["reform"]/632 * 100}%`}}>
+                <div
+                  className="results cyan"
+                  style={{ width: `${(reformData["reform"] / 632) * 100}%` }}
+                >
                   <div className="result-number">{reformData["reform"]}</div>
                 </div>
 
-                <div className="results lightgreen" style={{width: `${greenData["reform"]/632 * 100}%`}}>
+                <div
+                  className="results lightgreen"
+                  style={{ width: `${(greenData["reform"] / 632) * 100}%` }}
+                >
                   <div className="result-number">{greenData["reform"]}</div>
                 </div>
 
-                <div className="results yellow" style={{width: `${snpData["reform"]/632 * 100}%`}}>
+                <div
+                  className="results yellow"
+                  style={{ width: `${(snpData["reform"] / 632) * 100}%` }}
+                >
                   <div className="result-number">{snpData["reform"]}</div>
                 </div>
 
-                <div className="results darkgreen" style={{width: `${pcData["reform"]/632 * 100}%`}}>
+                <div
+                  className="results darkgreen"
+                  style={{ width: `${(pcData["reform"] / 632) * 100}%` }}
+                >
                   <div className="result-number">{pcData["reform"]}</div>
                 </div>
 
-                <div className="results grey" style={{width: `${otherData["reform"]/632 * 100}%`}}>
+                <div
+                  className="results grey"
+                  style={{ width: `${(otherData["reform"] / 632) * 100}%` }}
+                >
                   <div className="result-number">{otherData["reform"]}</div>
                 </div>
               </div>
@@ -711,7 +736,9 @@ export default function Page() {
           <SideBarFooter />
         </div>
         <div
-          className={`mobile-footer-sliders mobile-only ${footerSliderState ? "active" : ""}`}
+          className={`mobile-footer-sliders mobile-only ${
+            footerSliderState ? "active" : ""
+          }`}
           onClick={handleFooterSlider}
         >
           <button className="footer-sliders-btn">
