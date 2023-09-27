@@ -739,9 +739,8 @@ export default function Page() {
           className={`mobile-footer-sliders mobile-only ${
             footerSliderState ? "active" : ""
           }`}
-          onClick={handleFooterSlider}
         >
-          <button className="footer-sliders-btn">
+          <button className="footer-sliders-btn" onClick={handleFooterSlider}>
             <img
               src="../Slider_Icon.svg"
               alt="Settings Icon"
