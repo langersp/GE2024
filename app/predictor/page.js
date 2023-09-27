@@ -42,6 +42,50 @@ export default function Page() {
     verdict: "Labour Majority of 10",
     verdictColor: "red",
   });
+
+  const [predictionData, setPredictionData] = useState([
+    {
+      name: "conservative",
+      color: "blue",
+      prediction: sumVotes(rawData[51]["Con"], "", true),
+    },
+    {
+      name: "labour",
+      color: "red",
+      prediction: sumVotes(rawData[52]["Lab"], "", true),
+    },
+    {
+      name: "liberal",
+      color: "orange",
+      prediction: sumVotes(rawData[53]["Lib"], "", true),
+    },
+    {
+      name: "reform",
+      color: "cyan",
+      prediction: sumVotes(rawData[54]["BRX"], "", true),
+    },
+    {
+      name: "green",
+      color: "lightgreen",
+      prediction: sumVotes(rawData[55]["GRN"], "", true),
+    },
+    {
+      name: "snp",
+      color: "yellow",
+      prediction: sumVotes(rawData[56]["SNP"], "", true),
+    },
+    {
+      name: "pc",
+      color: "darkgreen",
+      prediction: sumVotes(rawData[57]["PC"], "", true),
+    },
+    {
+      name: "other",
+      color: "grey",
+      prediction: sumVotes(rawData[58]["other"], "", true),
+    },
+  ]);
+
   const [menuState, setMenuState] = useState(false);
   const [footerSliderState, setFooterSliderState] = useState(false);
 
@@ -260,6 +304,28 @@ export default function Page() {
       pcSum,
       otherSum
     );
+
+    let predictionDataSorted = [
+      { name: "conservative", color: "blue", prediction: conservativeSum },
+      { name: "labour", color: "red", prediction: labourSum },
+      { name: "liberal", color: "orange", prediction: liberalSum },
+      { name: "reform", color: "cyan", prediction: reformSum },
+      { name: "green", color: "lightgreen", prediction: greenSum },
+      { name: "snp", color: "yellow", prediction: snpSum },
+      { name: "pc", color: "darkgreen", prediction: pcSum },
+      { name: "other", color: "grey", prediction: otherSum },
+    ];
+    predictionDataSorted.sort((a, b) => {
+      if (a.prediction > b.prediction) {
+        return -1;
+      } else if (a.prediction < b.prediction) {
+        return 1;
+      }
+      return 0;
+    });
+
+    setPredictionData(predictionDataSorted);
+
     if (labourSum > 325) {
       verdict = `Labour majority of ${(labourSum - 325) * 2}`;
       verdictColor = "red";
@@ -583,68 +649,19 @@ export default function Page() {
               </div>
 
               <div className="seat-tracker-results">
-                <div
-                  className="results blue"
-                  style={{
-                    width: `${(conservativeData["reform"] / 632) * 100}%`,
-                  }}
-                >
-                  <div className="result-number">
-                    <span>{conservativeData["reform"]}</span>
-                  </div>
-                </div>
-                <div
-                  className="results red"
-                  style={{ width: `${(labourData["reform"] / 632) * 100}%` }}
-                >
-                  <div className="result-number">
-                    <span>{labourData["reform"]}</span>
-                  </div>
-                </div>
-
-                <div
-                  className="results orange"
-                  style={{ width: `${(liberalData["reform"] / 632) * 100}%` }}
-                >
-                  <div className="result-number">
-                    <span>{liberalData["reform"]}</span>
-                  </div>
-                </div>
-
-                <div
-                  className="results cyan"
-                  style={{ width: `${(reformData["reform"] / 632) * 100}%` }}
-                >
-                  <div className="result-number">{reformData["reform"]}</div>
-                </div>
-
-                <div
-                  className="results lightgreen"
-                  style={{ width: `${(greenData["reform"] / 632) * 100}%` }}
-                >
-                  <div className="result-number">{greenData["reform"]}</div>
-                </div>
-
-                <div
-                  className="results yellow"
-                  style={{ width: `${(snpData["reform"] / 632) * 100}%` }}
-                >
-                  <div className="result-number">{snpData["reform"]}</div>
-                </div>
-
-                <div
-                  className="results darkgreen"
-                  style={{ width: `${(pcData["reform"] / 632) * 100}%` }}
-                >
-                  <div className="result-number">{pcData["reform"]}</div>
-                </div>
-
-                <div
-                  className="results grey"
-                  style={{ width: `${(otherData["reform"] / 632) * 100}%` }}
-                >
-                  <div className="result-number">{otherData["reform"]}</div>
-                </div>
+                {predictionData.map((party, i) => {
+                  return (
+                    <div
+                      className={`results ${party.color}`}
+                      style={{ width: `${(party.prediction / 632) * 100}%` }}
+                      key={party.name}
+                    >
+                      <div className="result-number">
+                        {i < 3 && <span>{party.prediction}</span>}
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
 
               <div className="seat-tracker-data-container">
