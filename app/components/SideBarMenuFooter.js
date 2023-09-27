@@ -4,11 +4,11 @@ const SideBarMenuFooter = () => {
   return (
     <div className="sidebar-footer open-menu-footer">
       <div className="links">
-        <a href="#" className="link">
+        <a href="https://www.5654.co.uk" target="_blank" className="link">
           Visit Our Website
         </a>
 
-        <a href="#" className="link">
+        <a href="https://www.5654.co.uk/contact-us" target="_blank"  className="link">
           Contact Us
         </a>
       </div>
