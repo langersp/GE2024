@@ -85,11 +85,10 @@ export default function Page() {
                 determine.&quot;
               </blockquote>
 
-              <span className="author">Ben Thornton - Founding Partner</span>
             </div>
           </div>
           <a href="/predictor" className="round-button">
-            VIEW THE NUMBER OF SEATS IN BRITAIN
+          VIEW THE ELECTION PREDICTOR
           </a>
           <div className="about-img-container">
             <img src="../People_Image_2.jpg" alt="About Image" />

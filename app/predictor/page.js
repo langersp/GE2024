@@ -407,15 +407,20 @@ export default function Page() {
             </div>
 
             <div className="text">
-              <h3>THE ELECTION FORECAST</h3>
+              <h3>MAKE YOUR PREDICTION</h3>
 
               <h4>
-                This tool lets you test the possible outcomes at the general
-                election based on three strategic questions: First, how much
-                will polls change between now and polling day? Second, how much
+                National polls offer an insight into the mood of the public. But
+                they can only ever provide a snapshot, not a prediction, about
+                what will happen at the General Election. We have created this
+                tool to help you test your own assumptions about what might
+                happen at the general election.
+                <br /><br />
+                It is based on three strategic questions: First, how much will
+                polls change between now and polling day? Second, how much
                 tactical voting will take place on polling day? Third, will
                 Reform UK candidates pose a meaningful challenge to Conservative
-                PPCs across the country? By answering these three questions,
+                PPCs across the country?”By answering these three questions,
                 informed by precedent and the effect that these events have had
                 in the past, you can forecast who the next Prime Minister will
                 be, what type of government they will lead, and what kind of
@@ -424,7 +429,7 @@ export default function Page() {
             </div>
 
             <div className="anchor-link">
-              <a href="#predictor-anchor">VIEW THE PREDICTOR</a>
+              <a href="#predictor-anchor">USE THE ELECTION PREDICTOR</a>
             </div>
           </div>
 
@@ -464,8 +469,7 @@ export default function Page() {
                 <a href="#!" className="help-icon">
                   <div className="help-text">
                     <p>
-                      Lorem ipsum ante aenean amet hac etiam felis non augue
-                      suscipit tristique, condimentum.
+                      This column shows how the seats would have been shared between the parties applying the 2019 vote to the new seat boundaries which are expected to be confirmed this autumn.
                     </p>
                   </div>
                 </a>
@@ -481,16 +485,13 @@ export default function Page() {
                 <a href="#!" className="help-icon">
                   <div className="help-text">
                     <p>
-                      Lorem ipsum ante aenean amet hac etiam felis non augue
-                      suscipit tristique, condimentum.
+                    This column shows how the parties are expected to perform based on current national polling from YouGov.
                     </p>
                   </div>
                 </a>
 
                 <span>
                   Nowcast
-                  <br />
-                  (Current Polling Avg)
                 </span>
               </div>
 
@@ -498,8 +499,7 @@ export default function Page() {
                 <a href="#!" className="help-icon">
                   <div className="help-text">
                     <p>
-                      Lorem ipsum ante aenean amet hac etiam felis non augue
-                      suscipit tristique, condimentum.
+                    This column shows how the parties will perform based on your choices using our election predictor.
                     </p>
                   </div>
                 </a>
@@ -507,7 +507,7 @@ export default function Page() {
                 <span>
                   Potential 2024
                   <br />
-                  Election Result
+                  General Election Result
                 </span>
               </div>
             </div>
@@ -629,7 +629,7 @@ export default function Page() {
           <div className="seat-tracker-section">
             <div className="seat-tracker-heading">
               <h2>
-                GENERAL ELECTION <span>SEAT TRACKER</span>
+              How the seats will be shared based on your choices
               </h2>
             </div>
             <div className="data-table-section seat-tracker-data-section">

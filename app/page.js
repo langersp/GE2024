@@ -122,11 +122,7 @@ export default function Page() {
           </div>
 
           <div className="main-heading">
-            <h1>
-              THE ELECTION
-              <br />
-              FORECAST
-            </h1>
+            <h1>5654 ELECTION CENTRE</h1>
           </div>
 
           <div className="landing-btn">
@@ -205,7 +201,7 @@ export default function Page() {
           </div>
           <div className="text-container">
             <span>
-              A Product Of <strong>5654 & Company</strong>
+              &copy; <strong>5654 & Company</strong>
             </span>
           </div>
         </div>
