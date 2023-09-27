@@ -701,7 +701,7 @@ h4 {
   padding: 2.5vw 1vw;
   font-weight: 700;
 }
-.data-table-section .data-table-headings > div::before {
+/* .data-table-section .data-table-headings > div::before {
   content: "";
   display: block;
   position: absolute;
@@ -710,7 +710,7 @@ h4 {
   background: #f01e5b;
   top: 0;
   left: calc(50% - 0.75vw);
-}
+} */
 .data-table-section .data-table-headings > div:first-of-type {
   width: 25%;
   text-align: left;
@@ -1165,6 +1165,161 @@ width:100%!important}
   width: 500%!important;
 }
 .MuiTypography-root { font-size:1vw!important}
+
+
+.blog-tiles .blog-excerpt h3 {
+  margin-bottom: 1vw;
+}
+.slider-container .slider-title a .help-text {
+  top: -7vw;
+}
+.slider-container .slider-title a .help-text::before {
+  top: 7.25vw;
+}
+.data-table-section .data-table-headings .help-icon {
+  display: block;
+  width: 1.5vw;
+  height: 1.5vw;
+  position: absolute;
+  left: calc(50% - 0.75vw);
+  top: 0;
+  background-image: url(./assets/Info_Icon.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+.data-table-section .data-table-headings .help-icon .help-text {
+  position: absolute;
+  width: 12.5vw;
+  background: #060e31;
+  color: #fff;
+  z-index: -1;
+  right: 3vw;
+  padding: 1vw 1vw 0 1vw;
+  top: -2vw;
+  opacity: 0;
+  text-align: left;
+}
+.data-table-section .data-table-headings .help-icon .help-text::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 1vw;
+  height: 1vw;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  right: -0.5vw;
+  top: 2.25vw;
+  background: #060e31;
+}
+.data-table-section .data-table-headings .help-icon:hover .help-text {
+  opacity: 1;
+  z-index: 9;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+}
+.seat-tracker-section .seat-tracker-data-table-headings {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.seat-tracker-section .seat-tracker-results {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 10vw;
+  border-radius: 1.75vw;
+  margin-bottom: 2vw;
+  overflow: hidden;
+}
+.seat-tracker-section .seat-tracker-results .results {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.seat-tracker-section .seat-tracker-results .results span {
+  background: #fff;
+  border-radius: 50%;
+  width: 3vw;
+  height: 3vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #060e31;
+  position: relative;
+  z-index: 9;
+}
+.seat-tracker-section .seat-tracker-results .red {
+  background: #f61149;
+  width: 60%;
+}
+.seat-tracker-section .seat-tracker-results .blue {
+  background: #0174e9;
+  width: 30%;
+}
+.seat-tracker-section .seat-tracker-results .orange {
+  background: #ffb93f;
+  width: 5%;
+}
+.seat-tracker-section .seat-tracker-results .cyan {
+  width: 2%;
+  background: #5bddd5;
+}
+.seat-tracker-section .seat-tracker-results .lightgreen {
+  width: 1%;
+  background: #a0d348;
+}
+.seat-tracker-section .seat-tracker-results .yellow {
+  width: 1%;
+  background: #fed523;
+}
+.seat-tracker-section .seat-tracker-results .darkgreen {
+  width: 0.5%;
+  background: #59a527;
+}
+.seat-tracker-section .seat-tracker-results .grey {
+  width: 0.5%;
+  background: #a3a3a3;
+}
+.seat-tracker-section .seat-tracker-data-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.seat-tracker-section .seat-tracker-data-container .col {
+  width: 32vw;
+}
+.seat-tracker-section .seat-tracker-data-table-row {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  cursor: default;
+}
+.seat-tracker-section .seat-tracker-data-table-row > div {
+  width: 10vw;
+}
+.seat-tracker-section .seat-tracker-data-table-row > div:first-of-type {
+  width: calc(100% - 10vw);
+}
 
 
 @media (min-width: 768px) {
