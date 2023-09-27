@@ -2063,6 +2063,9 @@ width:100%!important}
   left: auto !important;
   right: 0 !important;
 }
+.slider-container .selector .MuiSwitch-root .MuiSwitch-track {
+  background: #666;
+}
 .slider-container .selector .MuiSwitch-thumb {
   width: 1.5vw;
   height: 1.5vw;
@@ -2116,5 +2119,8 @@ width:100%!important}
   .slider-container .selector .MuiStack-root .MuiSwitch-root .MuiButtonBase-root.Mui-checked .PrivateSwitchBase-input {
     left: auto !important;
     right: 0 !important;
+  }
+  .slider-container .selector .MuiStack-root .MuiSwitch-root .MuiSwitch-track {
+    background: #666;
   }
 }
