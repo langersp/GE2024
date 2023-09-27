@@ -2033,3 +2033,72 @@ width:100%!important}
             justify-content: center;
   }
 }
+
+.slider-container .MuiSlider-root {
+  padding: 0;
+  margin: 1.5vw 0;
+  display: block;
+  height: 0.5vw;
+}
+.slider-container .slider-value {
+  top: 2vw;
+}
+.slider-container .selector .MuiSwitch-root {
+  height: 3.5vw !important;
+  padding: 1.5vw !important;
+}
+.slider-container .selector .MuiSwitch-root .MuiSwitch-switchBase {
+  padding: 1vw;
+  height: 3.5vw;
+}
+.slider-container .selector .MuiSwitch-root .MuiSwitch-switchBase.Mui-checked {
+  -webkit-transform: translateX(7vw) !important;
+          transform: translateX(7vw) !important;
+}
+.slider-container .selector .MuiSwitch-thumb {
+  width: 1.5vw;
+  height: 1.5vw;
+}
+
+@media (max-width: 767px) {
+  .slider-container .MuiSlider-root {
+    padding: 0;
+    height: 2.5vw;
+    border-radius: 1.25vw;
+    margin: 1.5vw 0;
+  }
+  .slider-container .MuiSlider-thumb {
+    width: 5.5vw !important;
+    height: 5.5vw !important;
+    border-width: 1vw !important;
+  }
+  .slider-container .selector .MuiStack-root {
+    -webkit-box-pack: justify !important;
+        -ms-flex-pack: justify !important;
+            justify-content: space-between !important;
+  }
+  .slider-container .selector .MuiStack-root .MuiTypography-root {
+    width: 15vw !important;
+    height: 15vw !important;
+    font-size: 3.5vw !important;
+  }
+  .slider-container .selector .MuiStack-root .MuiSwitch-root {
+    width: 30vw !important;
+    padding: 6.25vw 0 !important;
+    height: 15vw !important;
+  }
+  .slider-container .selector .MuiStack-root .MuiSwitch-root .MuiButtonBase-root {
+    height: 5.5vw !important;
+    width: 5.5vw !important;
+    top: 4.75vw !important;
+    padding: 0 !important;
+  }
+  .slider-container .selector .MuiStack-root .MuiSwitch-root .MuiButtonBase-root .MuiSwitch-thumb {
+    width: 5.5vw !important;
+    height: 5.5vw !important;
+  }
+  .slider-container .selector .MuiStack-root .MuiSwitch-root .MuiButtonBase-root.Mui-checked {
+    -webkit-transform: translateX(24vw) !important;
+            transform: translateX(24vw) !important;
+  }
+}
