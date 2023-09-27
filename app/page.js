@@ -122,7 +122,7 @@ export default function Page() {
           </div>
 
           <div className="main-heading">
-            <h1>5654 ELECTION CENTRE</h1>
+            <h1>5654 ELECTION<br />CENTRE</h1>
           </div>
 
           <div className="landing-btn">
