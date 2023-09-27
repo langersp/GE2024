@@ -415,7 +415,8 @@ export default function Page() {
                 what will happen at the General Election. We have created this
                 tool to help you test your own assumptions about what might
                 happen at the general election.
-                <br /><br />
+                <br />
+                <br />
                 It is based on three strategic questions: First, how much will
                 polls change between now and polling day? Second, how much
                 tactical voting will take place on polling day? Third, will
@@ -469,7 +470,9 @@ export default function Page() {
                 <a href="#!" className="help-icon">
                   <div className="help-text">
                     <p>
-                      This column shows how the seats would have been shared between the parties applying the 2019 vote to the new seat boundaries which are expected to be confirmed this autumn.
+                      This column shows how the seats would have been shared
+                      between the parties applying the 2019 vote to the new seat
+                      boundaries which are expected to be confirmed this autumn.
                     </p>
                   </div>
                 </a>
@@ -485,21 +488,21 @@ export default function Page() {
                 <a href="#!" className="help-icon">
                   <div className="help-text">
                     <p>
-                    This column shows how the parties are expected to perform based on current national polling from YouGov.
+                      This column shows how the parties are expected to perform
+                      based on current national polling from YouGov.
                     </p>
                   </div>
                 </a>
 
-                <span>
-                  Nowcast
-                </span>
+                <span>Nowcast</span>
               </div>
 
               <div className="data-table-heading-col">
                 <a href="#!" className="help-icon">
                   <div className="help-text">
                     <p>
-                    This column shows how the parties will perform based on your choices using our election predictor.
+                      This column shows how the parties will perform based on
+                      your choices using our election predictor.
                     </p>
                   </div>
                 </a>
@@ -628,9 +631,7 @@ export default function Page() {
 
           <div className="seat-tracker-section">
             <div className="seat-tracker-heading">
-              <h2>
-              How the seats will be shared based on your choices
-              </h2>
+              <h2>How the seats will be shared based on your choices</h2>
             </div>
             <div className="data-table-section seat-tracker-data-section">
               <div className="data-table-headings seat-tracker-data-table-headings">
@@ -766,17 +767,9 @@ export default function Page() {
 
             <span>MAKE YOUR PREDICTION</span>
 
-            <img
-              src="../Plus.svg"
-              alt="Plus Icon"
-              className="plus-minus plus"
-            />
+            <span class="plus-minus plus">OPEN</span>
 
-            <img
-              src="../Minus.svg"
-              alt="Minus Icon"
-              className="plus-minus minus"
-            />
+            <span class="plus-minus minus">CLOSE</span>
           </button>
           <SlidersMobile
             handlePollsTighten={handlePollsTighten}
