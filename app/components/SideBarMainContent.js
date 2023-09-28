@@ -35,7 +35,7 @@ const SideBarMainContent = ({
 
         <GESwitch
           title="WILL REFORM UK FAIL TO BREAK THROUGH?"
-          helperText="Analysis from the 2017 and 2019 General elections found that where the Brexit Party stood candidates, the change in vote share was more strongly correlated with Labour’s vote share falling than other parties.  Previous analysis found, in  the absence of a Brexit Party candidate, 70% of those who switched from Labour to the Brexit Party would have instead backed the Conservatives, while just 30% would have stuck with Labour."
+          helperText="Analysis from the 2017 and 2019 General Election found that where UKIP or the Brexit Party stood candidates, the change in vote share was more strongly correlated with Labour's vote share falling than other parties. Previous analysis found, in  the absence of a Brexit Party candidate, 70% of those who switched from Labour to the Brexit Party would have instead backed the Conservatives, while just 30% would have stuck with Labour."
           reformToggle={reformToggle}
           handleReformToggle={handleReformToggle}
         />
