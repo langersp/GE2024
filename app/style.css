@@ -2146,3 +2146,29 @@ width:100%!important}
       -ms-flex-align: start;
           align-items: flex-start;
 }
+
+.slider-container .selector .MuiSwitch-root {
+  overflow: visible;
+}
+.slider-container .selector .MuiSwitch-root .MuiSwitch-switchBase .PrivateSwitchBase-input {
+  width: 17.5vw !important;
+  left: -3.5vw !important;
+}
+.slider-container .selector .MuiSwitch-root .MuiSwitch-switchBase.Mui-checked .PrivateSwitchBase-input {
+  right: -3.5vw !important;
+}
+
+@media (max-width: 767px) {
+  .slider-container .selector .MuiStack-root .MuiSwitch-root {
+    overflow: visible;
+  }
+  .slider-container .selector .MuiStack-root .MuiSwitch-root .MuiButtonBase-root .PrivateSwitchBase-input {
+    width: 74vw !important;
+    left: -22vw !important;
+    height: 15vw !important;
+    top: -4.5vw !important;
+  }
+  .slider-container .selector .MuiStack-root .MuiSwitch-root .MuiButtonBase-root.Mui-checked .PrivateSwitchBase-input {
+    right: -22vw !important;
+  }
+}
