@@ -419,9 +419,7 @@ export default function Page() {
                 <br />
                 It is based on three strategic questions: First, how much will
                 polls change between now and polling day? Second, how much
-                tactical voting will take place on polling day? Third, will
-                Reform UK candidates pose a meaningful challenge to Conservative
-                PPCs across the country? By answering these three questions,
+                tactical voting will take place on polling day? Third, will Reform UK fail to break through? By answering these three questions,
                 informed by precedent and the effect that these events have had
                 in the past, you can forecast who the next Prime Minister will
                 be, what type of government they will lead, and what kind of
