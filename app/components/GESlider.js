@@ -37,6 +37,7 @@ const GESlider = ({
           valueLabelDisplay="auto"
           onChange={handleSliderChange}
           onMouseUp={() => handlePollsTighten()}
+          onTouchEnd={() => handlePollsTighten()}
           min={0}
           max={maxValue}
           sx={{
