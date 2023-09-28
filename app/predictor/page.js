@@ -631,7 +631,7 @@ export default function Page() {
 
           <div className="seat-tracker-section">
             <div className="seat-tracker-heading">
-              <h2>How the seats will be shared based on your choices</h2>
+              <h2 style={{fontWeight:`400!important`}}>HOW THE SEATS WILL BE SHARED <strong>BASED ON YOUR CHOICES</strong></h2>
             </div>
             <div className="data-table-section seat-tracker-data-section">
               <div className="data-table-headings seat-tracker-data-table-headings">

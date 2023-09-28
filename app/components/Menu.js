@@ -13,7 +13,7 @@ const Menu = () => {
         </a>
 
         <a href="/about" className="link">
-          About the predictor
+          About The Predictor
         </a>
 
         <a href="/blog" className="link">
