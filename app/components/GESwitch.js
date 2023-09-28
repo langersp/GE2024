@@ -39,7 +39,6 @@ const GESwitch = ({ title, helperText, reformToggle, handleReformToggle }) => {
               fontWeight: "700",
             }}
             className={`switch-text ${!reformToggle ? "active" : ""}`}
-            onClick={handleReformToggle}
           >
             No
           </Typography>
@@ -78,7 +77,6 @@ const GESwitch = ({ title, helperText, reformToggle, handleReformToggle }) => {
               fontWeight: "700",
             }}
             className={`switch-text ${reformToggle ? "active" : ""}`}
-            onClick={handleReformToggle}
           >
             Yes
           </Typography>
