@@ -767,9 +767,9 @@ export default function Page() {
 
             <span>MAKE YOUR PREDICTION</span>
 
-            <span class="plus-minus plus">OPEN</span>
+            <span className="plus-minus plus">OPEN</span>
 
-            <span class="plus-minus minus">CLOSE</span>
+            <span className="plus-minus minus">CLOSE</span>
           </button>
           <SlidersMobile
             handlePollsTighten={handlePollsTighten}

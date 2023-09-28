@@ -2,6 +2,7 @@
 import Switch, { SwitchProps } from "@mui/material/Switch";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
+import FormControlLabel from '@mui/material/FormControlLabel';
 
 const GESwitch = ({ title, helperText, reformToggle, handleReformToggle }) => {
   const handleSwitch = () => {
@@ -38,6 +39,7 @@ const GESwitch = ({ title, helperText, reformToggle, handleReformToggle }) => {
               fontWeight: "700",
             }}
             className={`switch-text ${!reformToggle ? "active" : ""}`}
+            onClick={handleReformToggle}
           >
             No
           </Typography>
@@ -76,6 +78,7 @@ const GESwitch = ({ title, helperText, reformToggle, handleReformToggle }) => {
               fontWeight: "700",
             }}
             className={`switch-text ${reformToggle ? "active" : ""}`}
+            onClick={handleReformToggle}
           >
             Yes
           </Typography>

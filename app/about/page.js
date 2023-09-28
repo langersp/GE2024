@@ -45,8 +45,6 @@ export default function Page() {
 
         <div className="main-content">
           <div className="about-text-container">
-            {/* <h4>About our general election centre:</h4> */}
-
             <p>
               <strong>
                 National polls offer an insight into the mood of the public. But
@@ -63,32 +61,26 @@ export default function Page() {
               tactical voting could play and some of the other factors that will
               influence the final result.
             </p>
-
-            <div className="quote">
-              <blockquote>
-                &quot;Since 2010, the UK has experienced four different models
-                of government: a coalition government; a government with a small
-                working majority; a minority government; and, since 2019, a
-                government with a strong working majority.
-                <br />
-                <br />
-                The next general election is now firmly in sight. Current
-                polling suggests Labour are heading to victory - yet the
-                political arithmetic remains extraordinarily difficult for Sir
-                Keir Starmer.
-                <br />
-                <br />
-                Starmer is likely to be the UK&rsquo;s next Prime Minister
-                &ndash; managing a Labour-led administration. But the evidence
-                suggests the model of government he will preside over &ndash;
-                and the dynamics in parliament &ndash; are harder to
-                determine.&quot;
-              </blockquote>
-
-            </div>
+            <p>
+              Since 2010, the UK has experienced four different models of
+              government: a coalition government; a government with a small
+              working majority; a minority government; and, since 2019, a
+              government with a strong working majority.
+            </p>
+            <p>
+              The next general election is now firmly in sight. Current polling
+              suggests Labour are heading to victory - yet the political
+              arithmetic remains extraordinarily difficult for Sir Keir Starmer.
+            </p>
+            <p>
+              Starmer is likely to be the UK&rsquo;s next Prime Minister &ndash;
+              managing a Labour-led administration. But the evidence suggests
+              the model of government he will preside over &ndash; and the
+              dynamics in parliament &ndash; are harder to determine.
+            </p>
           </div>
           <a href="/predictor" className="round-button">
-          VIEW THE ELECTION PREDICTOR
+            VIEW THE ELECTION PREDICTOR
           </a>
           <div className="about-img-container">
             <img src="../People_Image_2.jpg" alt="About Image" />
