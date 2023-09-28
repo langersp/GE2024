@@ -53,7 +53,7 @@ const GESlider = ({
               height: "1.5vw",
               borderRadius: "50%",
               background: "#fff",
-              border: "0.3vw solid red",
+              border: "0.3vw solid #f01e5b",
               cursor: "pointer",
             },
             "& .MuiSlider-rail": {
