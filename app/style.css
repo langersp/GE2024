@@ -2141,3 +2141,8 @@ width:100%!important}
     padding: 15vw 12vw 12vw 12vw;
   }
 }
+.data-table-section .data-table-headings {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
