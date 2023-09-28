@@ -60,7 +60,7 @@ const GESwitch = ({ title, helperText, reformToggle, handleReformToggle }) => {
               width: "calc(100% - 7vw)",
               fontSize:"0.8vw",
               "& .MuiSwitch-thumb": {
-                border: "3px solid #f61149"
+                border: "0.3vw solid #f61149"
               }
             }}
           />
