@@ -59,7 +59,7 @@ export default function Page() {
                 <div className="blog-excerpt">
                   <h3>Ready Steady Go</h3>
                   <p>
-                    At the mercy of the weather and struggling to make himself heard as he expected his reasoning, the manner of Sunak's election announcement...
+                    At the mercy of the weather and struggling to make himself heard as he expected his reasoning, the manner of Sunak&rsquo;s election announcement...
                   </p>
                 </div>
               </div>
