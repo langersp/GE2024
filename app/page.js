@@ -134,6 +134,29 @@ export default function Page() {
 
         <div className="blog-tiles-container">
           <div className="blog-tiles">
+
+          <div className="blog-tile">
+              <div className="blog-img">
+                <img src="../blog4.jpeg" alt="Blog Image" />
+              </div>
+
+              <a
+                href="https://www.5654.co.uk/our-perspective/think-tanks-that-matter"
+                target="_blank"
+                className="blog-link"
+              ></a>
+
+              <div className="blog-excerpt">
+                <h3>
+                Ready Steady Go
+                </h3>
+                <p>
+                At the mercy of the weather and struggling to make himself heard as he explained his reasoning, the manner of Sunak&rsquo;s election announcement...
+                </p>
+              </div>
+            </div>
+
+
             <div className="blog-tile">
               <div className="blog-img">
                 <img src="../blog1.jpeg" alt="Blog Image" />
@@ -176,28 +199,7 @@ export default function Page() {
               </div>
             </div>
 
-            <div className="blog-tile">
-              <div className="blog-img">
-                <img src="../blog3.jpeg" alt="Blog Image" />
-              </div>
-
-              <a
-                href="https://www.5654.co.uk/our-perspective/think-tanks-that-matter"
-                target="_blank"
-                className="blog-link"
-              ></a>
-
-              <div className="blog-excerpt">
-                <h3>
-                  What Businesses Should be Doing Now: Think Tanks That Matter
-                </h3>
-                <p>
-                  They are the policy engine for the main parties. There is
-                  often a cross-transfer of people - policy strategists may
-                  leave think-tanks...
-                </p>
-              </div>
-            </div>
+            
           </div>
           <div className="text-container">
             <span>

@@ -150,7 +150,7 @@ h4 {
   background: #fff;
   position: relative;
 }
-.blog-section .blog-tile { 
+.blog-section .blog-tiles .blog-tile { 
   width: 14vw;
 }
 .blog-tiles .blog-img {
