@@ -45,7 +45,24 @@ export default function Page() {
         <div className="main-content">
           <div className="blog-tiles-section">
             <div className="blog-tiles">
-            
+            <div className="blog-tile">
+                <div className="blog-img">
+                  <img src="../blog4.jpeg" alt="Blog Image" />
+                </div>
+
+                <a
+                  href="https://www.5654.co.uk/our-perspective/ready-steady-go"
+                  target="_blank"
+                  className="blog-link"
+                ></a>
+
+                <div className="blog-excerpt">
+                  <h3>Ready, Steady, Go</h3>
+                  <p>
+                    At the mercy of the weather and struggling to make himself heard as he expected his reasoning, the manner of Sunak&rsquo;s election announcement...
+                  </p>
+                </div>
+              </div>
 
               <div className="blog-tile">
                 <div className="blog-img">
@@ -89,7 +106,10 @@ export default function Page() {
                 </div>
               </div>
 
-              <div className="blog-tile">
+              
+            </div>
+            <div className="blog-tiles">
+            <div className="blog-tile">
                 <div className="blog-img">
                   <img src="../blog3.jpeg" alt="Blog Image" />
                 </div>
@@ -108,26 +128,6 @@ export default function Page() {
                     They are the policy engine for the main parties. There is
                     often a cross-transfer of people - policy strategists may
                     leave think-tanks...
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="blog-tiles">
-            <div className="blog-tile">
-                <div className="blog-img">
-                  <img src="../blog4.jpeg" alt="Blog Image" />
-                </div>
-
-                <a
-                  href="https://www.5654.co.uk/our-perspective/ready-steady-go"
-                  target="_blank"
-                  className="blog-link"
-                ></a>
-
-                <div className="blog-excerpt">
-                  <h3>Ready, Steady, Go</h3>
-                  <p>
-                    At the mercy of the weather and struggling to make himself heard as he expected his reasoning, the manner of Sunak&rsquo;s election announcement...
                   </p>
                 </div>
               </div>
