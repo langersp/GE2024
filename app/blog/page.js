@@ -47,7 +47,7 @@ export default function Page() {
             <div className="blog-tiles">
             <div className="blog-tile">
                 <div className="blog-img">
-                  <img src="../blog1.jpeg" alt="Blog Image" />
+                  <img src="../Ready_Steady_Go_5654_Image.jpeg" alt="Blog Image" />
                 </div>
 
                 <a
@@ -59,9 +59,7 @@ export default function Page() {
                 <div className="blog-excerpt">
                   <h3>Ready Steady Go</h3>
                   <p>
-                    At exactly 10pm on General Election night 2019, the BBC, ITV
-                    and Sky published their shared Exit poll revealing that
-                    Boris Johnson...
+                    At the mercy of the weather and struggling to make himself heard as he expected his reasoning, the manner of Sunak's election announcement...
                   </p>
                 </div>
               </div>
