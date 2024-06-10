@@ -45,6 +45,27 @@ export default function Page() {
         <div className="main-content">
           <div className="blog-tiles-section">
             <div className="blog-tiles">
+            <div className="blog-tile">
+                <div className="blog-img">
+                  <img src="../blog1.jpeg" alt="Blog Image" />
+                </div>
+
+                <a
+                  href="https://www.5654.co.uk/our-perspective/is-a-labour-majority-inevitable"
+                  target="_blank"
+                  className="blog-link"
+                ></a>
+
+                <div className="blog-excerpt">
+                  <h3>Ready Steady Go</h3>
+                  <p>
+                    At exactly 10pm on General Election night 2019, the BBC, ITV
+                    and Sky published their shared Exit poll revealing that
+                    Boris Johnson...
+                  </p>
+                </div>
+              </div>
+
               <div className="blog-tile">
                 <div className="blog-img">
                   <img src="../blog1.jpeg" alt="Blog Image" />
