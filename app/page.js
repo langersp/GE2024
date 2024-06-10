@@ -141,14 +141,14 @@ export default function Page() {
               </div>
 
               <a
-                href="https://www.5654.co.uk/our-perspective/think-tanks-that-matter"
+                href="https://www.5654.co.uk/our-perspective/ready-steady-go"
                 target="_blank"
                 className="blog-link"
               ></a>
 
               <div className="blog-excerpt">
                 <h3>
-                Ready Steady Go
+                Ready, Steady, Go
                 </h3>
                 <p>
                 At the mercy of the weather and struggling to make himself heard as he explained his reasoning, the manner of Sunak&rsquo;s election announcement...

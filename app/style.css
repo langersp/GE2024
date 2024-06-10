@@ -150,9 +150,9 @@ h4 {
   background: #fff;
   position: relative;
 }
-.blog-section .blog-tiles .blog-tile { 
+/* .blog-section .blog-tiles .blog-tile { 
   width: 14vw;
-}
+} */
 .blog-tiles .blog-img {
   width: 100%;
   height: 10.5vw;
