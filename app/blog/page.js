@@ -47,7 +47,7 @@ export default function Page() {
             <div className="blog-tiles">
             <div className="blog-tile">
                 <div className="blog-img">
-                  <img src="../Ready_Steady_Go_5654_Image.jpeg" alt="Blog Image" />
+                  <img src="../blog4.jpeg" alt="Blog Image" />
                 </div>
 
                 <a
