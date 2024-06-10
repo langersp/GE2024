@@ -178,7 +178,11 @@ export default function Page() {
               </div>
             </div>
 
-            <div className="blog-tile">
+           
+            
+          </div>
+          <div className="blog-tiles">
+          <div className="blog-tile">
               <div className="blog-img">
                 <img src="../blog2.jpeg" alt="Blog Image" />
               </div>
@@ -199,7 +203,6 @@ export default function Page() {
               </div>
             </div>
 
-            
           </div>
           <div className="text-container">
             <span>
