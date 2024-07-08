@@ -15,9 +15,13 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  // return (
+  //   // <html lang="en">
+  //   //   <body>{children}<Analytics /></body>
+  //   // </html>
+  // )
   return (
     <html lang="en">
-      <body>{children}<Analytics /></body>
-    </html>
-  )
+      <body><div>Election Complete.</div></body>
+    </html>)
 }
